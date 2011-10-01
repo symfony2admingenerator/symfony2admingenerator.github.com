@@ -1,0 +1,16 @@
+---
+layout: base
+---
+
+<ul class="toc"></ul>
+<div class="markdown">
+    {{ content }}
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.toc').tableOfContents();
+        window.location.hash = window.location.hash;
+    });
+    
+</script>
