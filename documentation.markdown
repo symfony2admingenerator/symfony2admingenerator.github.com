@@ -25,3 +25,8 @@ title: Documentation
 * [Label](documentation/fields-for-list.html#label)
 * [Sort](documentation/fields-for-list.html#sort)
 * [Getter](documentation/fields-for-list.html#getter)
+
+### List - Scopes filtering
+
+* [Propel](documentation/list-scopes.html#propel)
+* [Doctrine ORM/ODM](documentation/list-scopes.html#doctrine)
