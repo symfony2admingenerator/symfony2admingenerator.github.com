@@ -30,3 +30,7 @@ title: Documentation
 
 * [Propel](documentation/list-scopes.html#propel)
 * [Doctrine ORM/ODM](documentation/list-scopes.html#doctrine)
+
+### New / Edit form configuration 
+
+* [Display fields](documentation/form.html#display)
