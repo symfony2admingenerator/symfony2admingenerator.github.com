@@ -34,3 +34,5 @@ title: Documentation
 ### New / Edit form configuration 
 
 * [Display fields](documentation/form.html#display)
+* [Overwrite the rendering of a field](documentation/form.html#overwrite-the-rendering-of-a-field)
+* [Choose your types](documentation/form-advanced.html#choose-your-types)

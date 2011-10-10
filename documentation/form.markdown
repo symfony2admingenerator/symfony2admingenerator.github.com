@@ -58,3 +58,22 @@ new:
 
     </div>
 </div>
+
+## Overwrite the rendering of a field
+
+Edit the file : YourBundle/Resources/views/(Edit|New)/index.html
+
+And for the column title overwrite the Twig Block named form_**title**
+
+{% highlight html+django %}
+{{ "{%" }} extends_admingenerated "NamespaceYourBundle:(Edit|New):index.html.twig" %}
+{{ "{%" }} block form_title %}
+    {{ "{{ " }} parent() }}
+    <div id="preview_title">
+    
+    </div>
+    <script>
+        // Do here your own
+    </script>
+{{ "{%" }} endblock %}
+{% endhighlight %}
