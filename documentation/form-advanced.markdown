@@ -7,7 +7,7 @@ title: Forms avanced configuration
 
 ## Choose your types
 
-You'll probably dream it, changing your forms aspect without writing php. I'm also a dreamer. I'll do it for us. 
+You'll probably dream it, changing your forms aspect without writing php. I'm also a dreamer. I've do it for us. 
 
 First of all, i'll show you some samples.
 
