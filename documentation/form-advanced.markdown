@@ -7,13 +7,13 @@ title: Forms avanced configuration
 
 ## Choose your types
 
-You've probably dreamt about it: Changing the look and feel of forms without wri                                                                                        ting php code. I'm also a dreamer. I've done it for you.
+You've probably dreamt about it: Changing the look and feel of forms without writing php code. I'm also a dreamer. I've done it for you.
 
 First of all, I'll show you some samples.
 
 ### Change years range of a date field
 
-Configure your field in the `params.fields` section, or in the `params.edit.fiel                                                                                        ds` section if you want to change the value only for edit.
+Configure your field in the `params.fields` section, or in the `params.edit.fields` section if you want to change the value only for edit.
 
 {% highlight yaml %}
 params:
@@ -30,9 +30,9 @@ params:
             step: 1
 {% endhighlight %}
 
-As you can see here, I use the `addFormOptions` parameter to add more options to                                                                                         my form parameters. I could also use `formOptions` to remove all calculated opt                                                                                        ions and set only the ones that I want.
+As you can see here, I use the `addFormOptions` parameter to add more options to my form parameters. I could also use `formOptions` to remove all calculated opt                                                                                        ions and set only the ones that I want.
 
->**Did you see the magic?**<br />The `.` means that will call a php function (th                                                                                        e `range()` function in this example). The function must return an array or a st                                                                                        ring to be used as the form options. <br />Note: Parameters must be kept in the                                                                                         same order as in the called function.
+>**Did you see the magic?**<br />The `.` means that will call a php function (the `range()` function in this example). The function must return an array or a st                                                                                        ring to be used as the form options. <br />Note: Parameters must be kept in the                                                                                         same order as in the called function.
 
 ### Use a text input for your date field
 
@@ -89,7 +89,7 @@ class ActorType extends AbstractType
 
 ## Attach a dbType to a virtual field
 
-If you want to use a virtual field, depending on the type you want to use (e.g.                                                                                         a dateType, a text input, or a collection), you have to overwrite the `dbType`:
+If you want to use a virtual field, depending on the type you want to use (e.g. a dateType, a text input, or a collection), you have to overwrite the `dbType`:
 
 {% highlight yaml %}
 params:
