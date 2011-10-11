@@ -7,13 +7,13 @@ title: Forms avanced configuration
 
 ## Choose your types
 
-You'll probably dream it, changing your forms aspect without writing php. I'm also a dreamer. I've do it for us. 
+You've probably dreamt about it: Changing the look and feel of forms without wri                                                                                        ting php code. I'm also a dreamer. I've done it for you.
 
-First of all, i'll show you some samples.
+First of all, I'll show you some samples.
 
 ### Change years range of a date field
 
-Configure your field in the section `params.fields` or `params.edit.fields` if you wan't to change the value only for edit.
+Configure your field in the `params.fields` section, or in the `params.edit.fiel                                                                                        ds` section if you want to change the value only for edit.
 
 {% highlight yaml %}
 params:
@@ -30,9 +30,9 @@ params:
             step: 1
 {% endhighlight %}
 
-Like you can see here, i use the `addFormOptions` to add more options to my form parameters. I could also use `formOptions` to remove all calculated options and set my own only.
+As you can see here, I use the `addFormOptions` parameter to add more options to                                                                                         my form parameters. I could also use `formOptions` to remove all calculated opt                                                                                        ions and set only the ones that I want.
 
->**Did you see the magic?**<br />The `.` means that you wan't to call a php function will return an array or a string to be sets as options. <br />Note: parameters must be keeped in the good order of the called function
+>**Did you see the magic?**<br />The `.` means that will call a php function (th                                                                                        e `range()` function in this example). The function must return an array or a st                                                                                        ring to be used as the form options. <br />Note: Parameters must be kept in the                                                                                         same order as in the called function.
 
 ### Use a text input for your date field
 
@@ -44,9 +44,9 @@ params:
         widget: single_text
 {% endhighlight %}
 
-### Use a collection type 
+### Use a collection type
 
-By default collections are represented by a double list selector but sometimes, you'll wan't to create a collection type.
+By default collections are represented by a double list selector, but sometimes                                                                                         you'll want to create a collection type.
 
 {% highlight yaml %}
 params:
@@ -57,7 +57,7 @@ params:
         type: \Admingenerator\PropelDemoBundle\Form\Type\ActorType
 {% endhighlight %}
 
-And of course create your ActorType 
+And of course create your `ActorType`:
 
 {% highlight php %}
 <?php
@@ -72,12 +72,12 @@ class ActorType extends AbstractType
     {
         $builder->add('name');
     }
-    
+
     public function getName()
     {
         return 'propel_embed_actor';
     }
-    
+
     public function getDefaultOptions(array $options)
     {
         return array(
@@ -89,7 +89,7 @@ class ActorType extends AbstractType
 
 ## Attach a dbType to a virtual field
 
-If you wan't to use a virtual field and determine you want to show a date, a text input or a collection, you have to overwriter the dbType
+If you want to use a virtual field, depending on the type you want to use (e.g.                                                                                         a dateType, a text input, or a collection), you have to overwrite the `dbType`:
 
 {% highlight yaml %}
 params:
@@ -102,4 +102,3 @@ params:
 {% endhighlight %}
 
 Like that the method called will not be `setActors` but `setVirtualActors`
-
