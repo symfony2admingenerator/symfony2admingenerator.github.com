@@ -7,7 +7,7 @@ title: Quick start
 
 ## Step 1: Setup you symfony environnement
 
-You've of course to [setup the bundle](/installation.html) by forking the [ipsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) or by following the [installation guide](/installation.html)
+Of course, you've to [setup the bundle](/installation.html) by forking the [ipsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) or by following the [installation guide](/installation.html)
 
 ## Step 2: Generate a bundle
 
