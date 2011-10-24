@@ -225,3 +225,15 @@ Configure the dev environment:
 admingenerator_generator:
     overwrite_if_exists: true
 {% endhighlight %}
+
+## Want to connect to FOSUserBundle ?
+
+Just setup the [AdmingeneratorUserBundle](https://github.com/cedriclombardot/AdmingeneratorUserBundle#readme)
+
+Without assetic set in config.yml :
+
+{% highlight yaml %}
+admingenerator_user:
+     login_template: AdmingeneratorGeneratorBundle::base_login_assetic_less.html.twig
+{% endhighlight %}
+
