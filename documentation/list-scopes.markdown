@@ -24,7 +24,7 @@ builders:
         group_2:
           "With actors":
              filters: [ withActors ]
-          "Without actos":
+          "Without actors":
              filters: [ withoutActors ]
 {% endhighlight %}
 
@@ -63,7 +63,7 @@ builders:
         group_2:
           "With actors":
              filters: [ withActors ]
-          "Without actos":
+          "Without actors":
              filters: [ withoutActors ]
 {% endhighlight %}
 
