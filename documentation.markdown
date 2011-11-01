@@ -36,3 +36,8 @@ title: Documentation
 * [Display fields](documentation/form.html#display)
 * [Overwrite the rendering of a field](documentation/form.html#overwrite-the-rendering-of-a-field)
 * [Choose your types](documentation/form-advanced.html#choose-your-types)
+
+### Credentials
+
+* [For Actions](documentation/credentials.html#for-actions)
+* For columns (comming soon, not yet implemented)
