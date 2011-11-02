@@ -33,6 +33,7 @@ I'm happy to present you the roadmap, feel free to propose complete, clicking th
 * Add ability to export in XML, CSV, XLS
 * Implement a show action with chained admin to make easy to edit related objects
 * Adding tests and behat tests
+* Add batch actions
 
 ### Menu
 
