@@ -12,7 +12,7 @@ I'm happy to present you the roadmap, feel free to propose complete, clicking th
 ### Core :
 
 * Use the TwigGenerator as a vendor [#33](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/33)
-* Implement credentials for <strike>actions and</strike> columns
+* <strike>Implement credentials for actions and columns</strike> 
 * Implement non HTML5 validators [#17](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/17)
 
 ### ActiveAdminTheme :
@@ -34,6 +34,7 @@ I'm happy to present you the roadmap, feel free to propose complete, clicking th
 * Implement a show action with chained admin to make easy to edit related objects
 * Adding tests and behat tests
 * Add batch actions
+* Implement the `owner` credential
 
 ### Menu
 

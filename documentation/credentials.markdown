@@ -32,3 +32,14 @@ builders:
 {% endhighlight %}
 
 But i don't see good example to not let the generetor do the magic with the same test !
+
+## For columns and forms
+
+The idea is the same as actions, only the parameter key change, we are now on `fields`
+
+{% highlight yaml %}
+params:
+  fields:
+    fieldName:
+      credentials: "ROLE_A or (ROLE_B and ROLE_C)"
+{% endhighlight %}

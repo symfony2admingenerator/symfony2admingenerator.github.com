@@ -40,4 +40,4 @@ title: Documentation
 ### Credentials
 
 * [For Actions](documentation/credentials.html#for-actions)
-* For columns (comming soon, not yet implemented)
+* [For columns and forms](documentation/credentials.html#for-columns-and-forms)
