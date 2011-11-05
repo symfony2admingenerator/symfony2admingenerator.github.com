@@ -5,7 +5,7 @@ title: Installation
 
 # How to install
 
-You have to way to method to install the project :
+You have two methods to install the project :
 
 ## With the AdmingeneratorIpsum project ##
 
