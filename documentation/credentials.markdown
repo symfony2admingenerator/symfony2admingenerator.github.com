@@ -15,7 +15,7 @@ So because i don't understand what means this `[` and i understand words in the 
 builders:
   edit:
     params:
-      credentials: "ROLE_A or (ROLE_B and ROLE_C)"
+      credentials: 'hasRole("ROLE_A") or (hasRole("ROLE_B") and hasRole("ROLE_C"))'
 {% endhighlight %}
 
 With this sample, you'll secure your **edit** action, so if i go on the url edit without the authorization it will throw an AccessDeniedException.
@@ -28,7 +28,7 @@ builders:
   list:
     params:
       object_actions:
-        credentials: "ROLE_Z"
+        credentials: 'hasRole("ROLE_Z)'
 {% endhighlight %}
 
 But i don't see good example to not let the generetor do the magic with the same test !
@@ -41,5 +41,5 @@ The idea is the same as actions, only the parameter key change, we are now on `f
 params:
   fields:
     fieldName:
-      credentials: "ROLE_A or (ROLE_B and ROLE_C)"
+      credentials: 'hasRole("ROLE_A") or (hasRole("ROLE_B") and hasRole("ROLE_C"))'
 {% endhighlight %}
