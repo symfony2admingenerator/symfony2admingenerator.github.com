@@ -28,7 +28,7 @@ builders:
   list:
     params:
       object_actions:
-        credentials: 'hasRole("ROLE_Z)'
+        credentials: 'hasRole("ROLE_Z")'
 {% endhighlight %}
 
 But i don't see good example to not let the generetor do the magic with the same test !
