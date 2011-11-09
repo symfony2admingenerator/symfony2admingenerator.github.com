@@ -136,6 +136,15 @@ Add it to the `AppKernel` class:
 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
 {% endhighlight %}
 
+### Configure JMS Security
+
+In `config.yml`:
+
+{% highlight yaml %}
+jms_security_extra:
+     expressions: true
+{% endhighlight %}
+
 ### Setup the Model Manager you want
 
 At this step, you'll have to install the Model Manager you want (Doctrine ORM, Doctrine ODM and/or Propel).
