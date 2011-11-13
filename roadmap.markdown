@@ -11,10 +11,11 @@ I'm happy to present you the roadmap, feel free to propose complete, clicking th
 
 ### Core :
 
-* Use the TwigGenerator as a vendor [#33](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/33)
+* <strike>Use the TwigGenerator as a vendor [#33](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/33)</strike>
 * <strike>Make a magic installer [#33](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/33)</strike>
 * <strike>Implement credentials for actions and columns</strike> 
 * Implement non HTML5 validators [#17](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/17)
+* Fix mongodb types [#31](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/31)
 
 ### ActiveAdminTheme :
 
