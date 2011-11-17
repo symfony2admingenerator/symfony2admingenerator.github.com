@@ -2,15 +2,14 @@
 layout: base
 ---
 
-<ul class="toc"></ul>
 <div class="markdown">
-	<div class="searchcontrol">
-	
+	<div id="searchcontrol">
+	Loading
 	</div>
 	<div class="doc">
     {{ content }}
     </div>
-    <div class="searchResults">
+    <div id="searchResults">
     
     </div>
 </div>
@@ -22,9 +21,16 @@ layout: base
  // 1: nom de l'API à charger; 2: numéro de version de l'API (1.0)
  google.load('search', '1');
 
+ function getParamValue(param,url)
+ {
+ 	var u = url == undefined ? document.location.href : url;
+ 	var reg = new RegExp('(\\?|&|^)'+param+'=(.*?)(&|$)');
+ 	matches = u.match(reg);
+ 	return matches[2] != undefined ? decodeURIComponent(matches[2]).replace(/\+/g,' ') : '';
+ }
+ 
  // Fonction de traitement de la recherche
  function OnLoad() {
-
    // Créer un objet SearchControl qui permet de créer les contrôles basiques de la recherche
    var searchControl = new google.search.SearchControl();
 
@@ -54,7 +60,7 @@ layout: base
   searchControl.draw(document.getElementById("searchResults"));
 
  // Execute une recherche initiale
-  searchControl.execute("Google");
+  searchControl.execute(getParamValue('q'));
  }
  // Appeler cette fonction pour que le traitement s'effectue une fois le document chargé
  google.setOnLoadCallback(OnLoad);
