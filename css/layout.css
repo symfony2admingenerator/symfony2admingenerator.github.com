@@ -427,5 +427,5 @@ list-style-type: none;
     width: 670px;
 }
 
-.search { float: right }
+.search { float: right; padding-top:5px; }
 .gsc-search-box, .gsc-control { width: 100%; font-size: 14px; }
