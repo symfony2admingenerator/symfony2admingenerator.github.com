@@ -428,4 +428,4 @@ list-style-type: none;
 }
 
 .search { float: right; padding-top:5px; }
-.gsc-search-box, .gsc-control { width: 100%; font-size: 14px; }
+.gsc-search-box, .gsc-control { width: 100% !important; font-size: 14px !important; }
