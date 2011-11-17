@@ -426,3 +426,5 @@ list-style-type: none;
     padding-top: 5px;
     width: 670px;
 }
+
+.search { float: right }
