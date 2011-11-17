@@ -40,7 +40,7 @@ layout: base
    // Option permettant d'afficher tout les résultat trouvés, et des pages supplémentaires si les résultats sont nombreux
    options.setExpandMode(google.search.SearchControl.EXPAND_MODE_OPEN);
   // Attachement des contrôles à l'élément racine de la page qui possèdent l'id="searchcontrol"
-  options.setRoot(document.getElementById("searchcontrol"));
+  options.setRoot(document.getElementById("searchResults"));
 
  // Ajout d'un objet WebSearch pour préciser que l'on limite à la recherche web
  // BlogSearch pour la recherche sur les blogs
@@ -58,7 +58,7 @@ layout: base
   searchControl.addSearcher(siteSearch, options);
 
  // Les résultats de recherche sont écrit dans l'élément qui possèdent l'id="searchResults"
-  searchControl.draw(document.getElementById("searchResults"));
+  searchControl.draw(document.getElementById("searchcontrol"));
 
  // Execute une recherche initiale
   searchControl.execute(getParamValue('q'));
