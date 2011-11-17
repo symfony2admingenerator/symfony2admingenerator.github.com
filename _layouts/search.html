@@ -1,0 +1,63 @@
+---
+layout: base
+---
+
+<ul class="toc"></ul>
+<div class="markdown">
+	<div class="searchcontrol">
+	
+	</div>
+	<div class="doc">
+    {{ content }}
+    </div>
+    <div class="searchResults">
+    
+    </div>
+</div>
+
+<script src="http://www.google.com/jsapi?key=ABQIAAAAhouD53COXM_JTzDX-YC8vhTCGNSts3O6NUKf-9LbcIrtSdJ5XRQgUuU5jRQMYyQMnuVya_KUB01LeQ" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript">//<![CDATA[
+ // From http://kaelisoft.fr/blog/2010/01/06/utiliser-la-google-search-ajax-api/
+ // Chargement du champ de recherche google, les deux paramètres sont oligatoires
+ // 1: nom de l'API à charger; 2: numéro de version de l'API (1.0)
+ google.load('search', '1');
+
+ // Fonction de traitement de la recherche
+ function OnLoad() {
+
+   // Créer un objet SearchControl qui permet de créer les contrôles basiques de la recherche
+   var searchControl = new google.search.SearchControl();
+
+   // Définition des options du champ de résultats
+   var options = new google.search.SearcherOptions();
+   // Option permettant d'afficher tout les résultat trouvés, et des pages supplémentaires si les résultats sont nombreux
+   options.setExpandMode(google.search.SearchControl.EXPAND_MODE_OPEN);
+  // Attachement des contrôles à l'élément racine de la page qui possèdent l'id="searchcontrol"
+  options.setRoot(document.getElementById("searchcontrol"));
+
+ // Ajout d'un objet WebSearch pour préciser que l'on limite à la recherche web
+ // BlogSearch pour la recherche sur les blogs
+ // LocalSearch pour une recherche dans une localité
+ // ImageSearch pour rechercher des images
+  var siteSearch = new google.search.WebSearch();
+ // Restrictions de recherche
+ // setUserDefinedLabel: définit un label pour les résultats de recherche
+  siteSearch.setUserDefinedLabel("symfony2admingenerator.org");
+ // setUserDefinedClassSuffix: définit le suffixe des classes CSS des résultats (ex:gsc-resultsRoot-siteSearch)
+  siteSearch.setUserDefinedClassSuffix("siteSearch");
+ // setSiteRestriction: domaine du site sur lequel on veut chercher
+  siteSearch.setSiteRestriction("symfony2admingenerator.org");
+ // On applique les options de restrictions à la recherche
+  searchControl.addSearcher(siteSearch, options);
+
+ // Les résultats de recherche sont écrit dans l'élément qui possèdent l'id="searchResults"
+  searchControl.draw(document.getElementById("searchResults"));
+
+ // Execute une recherche initiale
+  searchControl.execute("Google");
+ }
+ // Appeler cette fonction pour que le traitement s'effectue une fois le document chargé
+ google.setOnLoadCallback(OnLoad);
+ //]]>
+ </script>
+
