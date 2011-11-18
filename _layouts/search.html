@@ -49,13 +49,24 @@ layout: base
   var siteSearch = new google.search.WebSearch();
  // Restrictions de recherche
  // setUserDefinedLabel: définit un label pour les résultats de recherche
-  siteSearch.setUserDefinedLabel("symfony2admingenerator.org");
+  siteSearch.setUserDefinedLabel("Documentation symfony2admingenerator.org");
  // setUserDefinedClassSuffix: définit le suffixe des classes CSS des résultats (ex:gsc-resultsRoot-siteSearch)
   siteSearch.setUserDefinedClassSuffix("siteSearch");
  // setSiteRestriction: domaine du site sur lequel on veut chercher
   siteSearch.setSiteRestriction("symfony2admingenerator.org");
  // On applique les options de restrictions à la recherche
   searchControl.addSearcher(siteSearch, options);
+
+  var siteSearch = new google.search.WebSearch();
+  // Restrictions de recherche
+  // setUserDefinedLabel: définit un label pour les résultats de recherche
+   siteSearch.setUserDefinedLabel("Google Group user support : http://groups.google.com/group/symfony2admingenerator");
+  // setUserDefinedClassSuffix: définit le suffixe des classes CSS des résultats (ex:gsc-resultsRoot-siteSearch)
+   siteSearch.setUserDefinedClassSuffix("siteSearch");
+  // setSiteRestriction: domaine du site sur lequel on veut chercher
+   siteSearch.setSiteRestriction("http://groups.google.com/group/symfony2admingenerator");
+  // On applique les options de restrictions à la recherche
+   searchControl.addSearcher(siteSearch, options);
 
  // Les résultats de recherche sont écrit dans l'élément qui possèdent l'id="searchResults"
   searchControl.draw(document.getElementById("searchcontrol"));
