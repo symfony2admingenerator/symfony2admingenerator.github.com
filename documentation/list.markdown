@@ -32,7 +32,7 @@ builders:
 The display parameter accept the name of the columns from your model.
 
 You can also add columns from one to many relations, for example the producer of the movie.
-In this case, we try to call `__toString` method else if you [parameter the field getter](documentation/fields.html#getter)
+In this case, we try to call `__toString` method else if you [parameter the field getter](/documentation/fields-for-list.html#getter)
 
 ## Paginate
 
