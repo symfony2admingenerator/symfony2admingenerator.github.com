@@ -9,6 +9,15 @@ title: Documentation
 
 ## By Features
 
+### Command lines (comming soon)
+
+Of course if you want to contribute, you're welcome
+
+### generator.yml params section
+
+* [Generators](documentation/generators.html)
+* [Bundle in Acme/Bundle/TestBundle ?](documentation/generator-params.html)
+
 ### List
 
 * [Title](documentation/list.html#title)
