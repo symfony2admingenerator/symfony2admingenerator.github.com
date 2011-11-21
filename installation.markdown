@@ -144,7 +144,7 @@ Register it in the `autoload.php` file:
 
 $loader->registerNamespaces(array(
     'Knp'       => __DIR__.'/../vendor/bundles',
-    'Knp\Menu'  => __DIR__.'/../vendor/KnpMenu/src'
+    'Knp\Menu'  => __DIR__.'/../vendor/KnpMenu/src',
 ));
 {% endhighlight %}
 
