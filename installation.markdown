@@ -56,7 +56,7 @@ public function registerBundles()
 }
 {% endhighlight %}
 
-### Install SensioGeneratorBundle
+### Install SensioGeneratorBundle (if you're not on a symfony-standard)
 
 {% highlight bash %}
 git submodule add git://github.com/sensio/SensioGeneratorBundle.git vendor/bundles/Sensio/Bundle/GeneratorBundle
@@ -79,9 +79,42 @@ Add it to the `AppKernel` class:
 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
 {% endhighlight %}
 
+
+### Install KnpMenuBundle 
+
+{% highlight bash %}
+git submodule add https://github.com/knplabs/KnpMenuBundle.git vendor/bundles/Knp/Bundle/MenuBundle
+git submodule add https://github.com/knplabs/KnpMenu.git vendor/KnpMenu
+{% endhighlight %}
+
+Register it in the `autoload.php` file:
+
+{% highlight php %}
+<?php
+// app/autoload.php
+
+$loader->registerNamespaces(array(
+    'Knp'       => __DIR__.'/../vendor/bundles',
+    'Knp\Menu'  => __DIR__.'/../vendor/KnpMenu/src',
+));
+{% endhighlight %}
+
+Add it to the `AppKernel` class:
+
+{% highlight php %}
+$bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
+{% endhighlight %} 
+
+Don't forget to configure it to use twig in `config.yml`:
+
+{% highlight yaml %}
+knp_menu:
+    twig: true
+{% endhighlight %}
+
 ### Now two ways to continue the setup :
 
-Manually, follow the end of readme, or automatically,
+Manually, follow the end of readme, or automatically ([http://www.youtube.com/watch?v=c5Q2v8llnNU&feature=youtu.be&hd=1](http://www.youtube.com/watch?v=c5Q2v8llnNU&feature=youtu.be&hd=1)), 
 
 {% highlight bash %}
 php app/console admin:setup
@@ -128,38 +161,6 @@ Add it to the `AppKernel` class:
 {% highlight php %}
 $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
 {% endhighlight %} 
-
-### Install KnpMenuBundle 
-
-{% highlight bash %}
-git submodule add https://github.com/knplabs/KnpMenuBundle.git vendor/bundles/Knp/Bundle/MenuBundle
-git submodule add https://github.com/knplabs/KnpMenu.git vendor/KnpMenu
-{% endhighlight %}
-
-Register it in the `autoload.php` file:
-
-{% highlight php %}
-<?php
-// app/autoload.php
-
-$loader->registerNamespaces(array(
-    'Knp'       => __DIR__.'/../vendor/bundles',
-    'Knp\Menu'  => __DIR__.'/../vendor/KnpMenu/src',
-));
-{% endhighlight %}
-
-Add it to the `AppKernel` class:
-
-{% highlight php %}
-$bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
-{% endhighlight %} 
-
-Don't forget to configure it to use twig in `config.yml`:
-
-{% highlight yaml %}
-knp_menu:
-    twig: true
-{% endhighlight %}
 
 ### Configure JMS Security
 
