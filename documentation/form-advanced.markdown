@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title: Forms avanced configuration
+title: Forms advanced configuration
 ---
 
-# Forms avanced configuration
+# Forms advanced configuration
 
 ## Choose your types
 
@@ -94,7 +94,7 @@ If you want to use a virtual field, depending on the type you want to use (e.g. 
 {% highlight yaml %}
 params:
   fields:
-    vitrual_actors:
+    vitual_actors:
       formType: collection
       dbType: collection
       addFormOptions:

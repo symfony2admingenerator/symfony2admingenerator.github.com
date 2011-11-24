@@ -5,8 +5,9 @@ title: Generators
 
 # Choose your generator
 
-Each orm/odm have is generator service. 
-And because it's a service you can easylly change to use your own and why not generate other things wich is not an admin.
+Each orm/odm can provide their own generator service that can replace the admingenerator.
+ 
+Thereby greatly increasing the scope and flexibility including things which are not strictly for an admin site.
 
 ## Propel
 
