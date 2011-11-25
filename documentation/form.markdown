@@ -4,28 +4,92 @@ title: Forms configuration
 ---
 
 # New / Edit form configuration 
+## Overview
+This section describes how new and edit forms are produced from parameters defined in the builders.     
+The parameters include: title, fields, display and list.  Here is an example for the edit form:
+
+{% highlight yaml %}
+ edit:
+    params:
+      title: You're editing the movie "{{ Movie.title }}"
+      fields:
+        actors:
+          formType: collection
+          dbType: collection
+          addFormOptions:
+            type: \Admingenerator\PropelDemoBundle\Form\Type\ActorType
+      display:
+        "NONE": [ title, release_date ]
+        "Other informations": [[ is_published ], [producer, actors ]]
+      actions:
+        list: ~
+{% endhighlight %}  
+This simple definition:
+
+*   Sets the edit page title, including **twig display** of any field from the model
+*   Allows fields to be defined that links this edit form to the underlying model.  Note the definition for actors and how this pulls in the subform ActorType
+*   full control of the display and layout of the fields.  This form contains 2 layout sections, showing visual separation of fields between them.
+*   define additional **actions** - e.g. navigation links/buttons can be placed on the form that link back to the list, delete or new forms.
+    
+##Title
+The example above shows a simple title string including the Twig inclusion of the field movie.actor. 
+
+For more control of the title section, when your changes are too extensive for this single line, you can override the Twig Block named form_**title**:
+
+Edit your local bundle file (NOT the one in cache)  : YourBundle/Resources/views/(Edit|New)/index.html
+
+and overwrite the Twig Block named form_**title** with your own as follows:  
+
+{% highlight html+django %}
+{{ "{%" }} extends_admingenerated "NamespaceYourBundle:(Edit|New):index.html.twig" %}
+{{ "{%" }} block form_title %}
+    {{ "{{ " }} parent() }}
+    <div id="preview_title">
+    
+    </div>
+    <script>
+        // Do here your own
+    </script>
+{{ "{%" }} endblock %}
+{% endhighlight %}
+
+>**Tip**<br />This field will be parsed by twig so you could use all the power of filters...
+## Fields
+This section is [a large topic refer to](/fields-for-list.html) as well.
+Fields allow tight integration between your model and the forms, by using the full power and flexibility of the symfony form components. This is where you setup:
+
+*     subforms that are related in your model 
+*     field formatting of form labels 
+*     Form options: formating (e.g. format: "Y-m-d") of fields,   
+*     PHP snippets directly in the form, for example to define a field with a date range. 
+*     Virtual Fields using getters that tie your model directly into the form, thereby allowing even complex relationships to be included
 
 ## Display
 
-Forms are can be **easily customized** in several ways:
-***Layout
+###Layout
 
-Notation:
-*    Multiple rows of **fields** [firstname,lastname].  This show  two fields on 2 separate rows .  
-*    Single **row** of fileds[[firstname,lastname]] will show the fields all on the same row .
-*    And [[firstname, initial, lastname],[Address],[city],[state]] shows the first row with three fields, followed by three fields on their own rows, 
+####Defining columns and rows for your form
+
+*    Multiple rows of **fields** [firstname,lastname].  This show  one column  on two separate rows.  
+*    Single **row** of fileds[[firstname,lastname]] will show the fields with two columns on a single row.
+*    And [[firstname, initial, lastname],[Address],[city, state],[Country]] shows that the form can contain multiple rows of varying number of columns per row. 
+
 Note: at the Current time you cannot mix fields and rows together.  i.e [[firstname, lastname],Address,city,state] is not allowed. 
-Use a collection of 4 rows [[firstname, lastname],[Address],[city],[state]]
+Use  4 rows [[firstname, lastname],[Address],[city],[state]]
 
-### Basic usage
-Display fields as multiple rows using a single fieldset.
+### Single Layout Section
+For a simple display.
 {% highlight yaml %}
 new:
   display: [ [firstname, lastname],[Address,City,state] ]
 {% endhighlight %}
 
-### With fieldsets
-Multiple fieldsets.
+###Multiple layout sections
+A form can be broken down into several layout sections with the use of fieldsets.  For example a registration form may contain a layout section for the username, email and password, 
+another for the address and a third section for the credit card details. Each grouped separately.
+Basically a layout section is defined by: a top legand and a fieldsets to put in the section.  This example shows two layout sections, each with a legand and a fieldset.
+
+
 {% highlight yaml %}
 edit:
   display: 
@@ -33,9 +97,9 @@ edit:
     "Where is it ?": [ location ]
 {% endhighlight %}
 
->**Tip**<br />Like in symfony 1, the none key allow you to set a fieldset without a top legend.   Otherwise the key "Where is it? is displayed as the top legend
+>**Tip**<br />Like in symfony 1, you do not need to define a top legand just set this to NONE. 
 
-### And the killer feature is : Show more than one field per rows
+#### And the killer feature is : Show more than one field per rows
 
 {% highlight yaml %}
 edit:
@@ -44,7 +108,7 @@ edit:
     "Where is it ?": [[ location_id], [ zipcode, country ]]
 {% endhighlight %}
 
-Note: You have to be under a fieldset. that's means you can't use multiple fields per rows with the basic display :
+Note: When you use sections each has to be properly defined on their own **separate** line:
 
 <div class="tabber">
     <div class="tabbertab" title="You can't do">
@@ -67,7 +131,7 @@ new:
     </div>
 </div>
 
-## Overwrite the rendering of a field
+### Overwrite the rendering of a field
 
 Edit the file : YourBundle/Resources/views/(Edit|New)/index.html
 
@@ -85,3 +149,5 @@ And for the column title overwrite the Twig Block named form_**title**
     </script>
 {{ "{%" }} endblock %}
 {% endhighlight %}
+
+##Actions

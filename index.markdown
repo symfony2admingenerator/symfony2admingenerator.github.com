@@ -14,7 +14,7 @@ The bundle generates PHP code in the cache directory, that can be easily read an
 *     **commands** that generate a bundle for an overall site (includes stubs for controllers) and those for creating a bundle to an existing bundle (which could be used to add additional entities to the site) within the group
 *     **setting up filters**, 
 *     **routing** that is integrated with the Symfony security framework
-*     **form generation supporting complete customization**: fields,field sets, labels, help text and validation. Complete form layout with multiple fields in a single row, sub forms and more
+*     **form generation supporting complete customization**: fields,field sets, labels, help text and validation. Complete form layout with multiple sections each with a flexible multiple fields in rows and columns, sub forms and more
 *     **query generation** including linking to associated entities (one-to-many, many-to-many)
 *     **Twig Template generation**, and of course
 *     **Supports the Model Managers: Doctrine ORM, Doctrine ODM and Propel** 
@@ -28,7 +28,6 @@ Edge cases are pushed far back since **extensibility is at the heart of the arch
 
 #### Developers looking for a rapid development process ####
 The primary goal is to simply and rapidly build an entire admin site. But additionally this can:
-
 
 *	be used in a similar way to the Symfony Interactive generators to **kick start your own development**, 
 *	refractor from this start and use the central yaml file to ensure that site components are consistent as you build out the development, and 
