@@ -44,6 +44,21 @@ params:
         widget: single_text
 {% endhighlight %}
 
+### Use a choice type and define your custom choices
+
+{% highlight yaml %}
+params:
+  fields:
+    gender:
+      formType: choice
+      addFormOptions:
+        choices:
+          male: Male
+          female: Female
+{% endhighlight %}
+
+To match with the right choice on the edit form, be sure that your getter return a value that match with one of the choices keys
+
 ### Use a collection type
 
 By default collections are represented by a double list selector, but sometimes                                                                                         you'll want to create a collection type.
