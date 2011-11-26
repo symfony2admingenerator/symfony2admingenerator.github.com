@@ -4,14 +4,16 @@ title: Installation
 ---
 
 # How to install
+##Overview
+You have two methods to install the project using a pre-configured bundle or your own custom install.  
 
-You have two methods to install the project :
+### With the AdmingeneratorIpsum fully configured base project ###
+The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
 
-## With the AdmingeneratorIpsum project ##
-
-The [AdmingeneratorIpsum](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a symfony2-standard wich have dependencies for all the admingenerators for each ORM & ODMs.
-
-This is the installation recommanded if you want to try the bundle in 2 minutes 
+*  **to have a Fast Start:**  with  all the dependencies carefully configured with multiple templates - including Propel, Doctrine ORM, ORD.
+*  **to try out all the features:** with working examples of generator configuration, models and documentation.
+*  **to contribute** to the generator project using a known starting configuration, and 
+*  **to see how  site access control** is configured . It comes preconfigured with the FOS_UserBundle.
 
 {% highlight bash %}
 > git clone git://github.com/cedriclombardot/AdmingeneratorIpsum.git
@@ -20,8 +22,10 @@ This is the installation recommanded if you want to try the bundle in 2 minutes
 > ./rebuild.sh
 {% endhighlight %}
 
-## On a symfony2 project ##
-
+### Your own symfony2 project ###
+Configure your own project in the standard Symfony2 way. 
+ 
+##Full Custom Installation
 {% highlight bash %}
 git submodule add git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git vendor/bundles/Admingenerator/GeneratorBundle
 {% endhighlight %}

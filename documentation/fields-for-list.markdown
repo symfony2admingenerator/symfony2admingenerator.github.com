@@ -5,6 +5,7 @@ title: Fields configuration for list
 
 # Fields configuration for list
 
+## Overview
 This page shows how flexible the Admin generator is in configuring your list page, that allows tight integration between your model and the list.
 Main features in configuring the list include: 
 
@@ -12,7 +13,6 @@ Main features in configuring the list include:
 *     Flexible sorting, including related tables - one to many left joints 
 *     Field formatting of form labels 
 *     Form options: formating (e.g. format: "Y-m-d"), 
-*     Specifying 
 *     PHP snippets directly in the form, for example to define a date range. 
 *     Virtual Fields using getters that tie your model directly into the list; thereby allowing even complex relationships to be included
 
@@ -33,8 +33,8 @@ params:
 The sorting of a list is very flexible: 
 
 *    sort on any of the columns in the table, or 
-*    a column in a related table. For a ##left join## Use table.field name. For example 'producer'.'name' (see example below), or 
-*    sort on a "virtual column". This is a calculated value in your model and accessed by a getter function. It need not be an table column.
+*    a column in a related table. For a **left join** Use table.field name. For example 'producer'.'name' (see example below), or 
+*    sort on a "virtual column". This is a calculated value in your model and accessed by a getter function. It need not be a table column.
 You can set option sort_on or sortOn (option are camelized at reading time) 
 
 {% highlight yaml %}

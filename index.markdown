@@ -11,11 +11,10 @@ The AdmingeneratorGeneratorBundle is an open source admin-generator for the famo
 
 The bundle generates PHP code in the cache directory, that can be easily read and understand. You can create all the functionality of an admin site, including: 
 
-*     **commands** that generate a bundle for an overall site (includes stubs for controllers) and those for creating a bundle to an existing bundle (which could be used to add additional entities to the site) within the group
+*     **commands** that generate a bundle for an overall site (includes stubs for controllers) and those for creating a bundle within an existing bundle
 *     **setting up filters**, 
 *     **routing** that is integrated with the Symfony security framework
-*     **form generation supporting complete customization**: fields,field sets, labels, help text and validation. Complete form layout with multiple sections each with a flexible multiple fields in rows and columns, sub forms and more
-*     **query generation** including linking to associated entities (one-to-many, many-to-many)
+*     **form generation supporting complete customization**: fields,field sets, labels, help text and validation. Complete form layout including multiple sections on the form,  sub forms and more
 *     **Twig Template generation**, and of course
 *     **Supports the Model Managers: Doctrine ORM, Doctrine ODM and Propel** 
 
@@ -23,7 +22,6 @@ All this from one simple file.
 
 Edge cases are pushed far back since **extensibility is at the heart of the architecture**.  All components outlined above can be overridden by using standard inheritance (for controllers, Twig Templates and forms) or using the normal configuration setup in Symfony (routing for example).
   
-
 ### Who is this for? ###
 
 #### Developers looking for a rapid development process ####

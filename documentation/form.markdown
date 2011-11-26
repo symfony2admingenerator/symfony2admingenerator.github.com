@@ -4,6 +4,7 @@ title: Forms configuration
 ---
 
 # New / Edit form configuration 
+
 ## Overview
 This section describes how new and edit forms are produced from parameters defined in the builders.     
 The parameters include: title, fields, display and list.  Here is an example for the edit form:
