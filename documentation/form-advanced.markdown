@@ -1,9 +1,9 @@
 ---
 layout: documentation
-title: Forms avanced configuration
+title: Forms advanced configuration
 ---
 
-# Forms avanced configuration
+# Forms advanced configuration
 
 ## Choose your types
 
@@ -72,7 +72,7 @@ params:
         type: \Admingenerator\PropelDemoBundle\Form\Type\ActorType
 {% endhighlight %}
 
-And of course create your `ActorType`:
+And of course create your `ActorType` form type:
 
 {% highlight php %}
 <?php
@@ -109,11 +109,11 @@ If you want to use a virtual field, depending on the type you want to use (e.g. 
 {% highlight yaml %}
 params:
   fields:
-    vitrual_actors:
+    virtual_actors:
       formType: collection
       dbType: collection
       addFormOptions:
         type: \Admingenerator\PropelDemoBundle\Form\Type\ActorType
 {% endhighlight %}
 
-Like that the method called will not be `setActors` but `setVirtualActors`
+Now the method called will be `setVirtualActors` not `setActors` 

@@ -4,12 +4,17 @@ title: Check credentials
 ---
 
 # Security: Check credentials ?
+IMPORTANT NOTE:  This feature is not formally  released.  Please monitor the [roadmap](/roadmap.html) section to see when this is ready.
 
 ## For actions
 
-I don't know for you but for me the `credentials` option in the symfony 1 is just an incomprehensible thing to write, it was something like [ A, [[ B, C ]]].
+Setting up security credentials is now easy, since it integrates with the Symfony security context and uses their terminology. 
 
-So because i don't understand what means this `[` and i understand words in the admingenerator new generation, write only a string
+**Symfony 1**: 'credentials' required complex expressions like [ A, [[ B, C ]]]
+
+**Admin generator:** uses Symfony 2 ROLEs to directly secure the  route - e.g. hasRole("ROLE_A").
+
+Therefore, for each action, simply define the roles that should be applied.
 
 {% highlight yaml %}
 builders:
@@ -18,10 +23,11 @@ builders:
       credentials: 'hasRole("ROLE_A") or (hasRole("ROLE_B") and hasRole("ROLE_C"))'
 {% endhighlight %}
 
-With this sample, you'll secure your **edit** action, so if i go on the url edit without the authorization it will throw an AccessDeniedException.
+This fully secures the edit action for the applicable route , and will throw an AccessDeniedException if the user does not have this role.
 
-And of course you'll ask him about the link to this action ! By default do noting and the test will be the same as the action. 
-But if you want to make another tests :
+If the credential definition is omitted then the security context will be defaulted to the symfony firewall configuration.
+
+Here is another example for the list action::
 
 {% highlight yaml %}
 builders:
@@ -31,11 +37,10 @@ builders:
         credentials: 'hasRole("ROLE_Z")'
 {% endhighlight %}
 
-But i don't see good example to not let the generetor do the magic with the same test !
 
 ## For columns and forms
 
-The idea is the same as actions, only the parameter key change, we are now on `fields`
+Security can be defined at the field level using the same format as 'actions';
 
 {% highlight yaml %}
 params:

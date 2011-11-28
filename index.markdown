@@ -3,17 +3,45 @@ layout: base
 title: "Documentation for AdmigeneratorGeneratorBundle"
 ---
 
-# Welcome to the AdmigeneratorGeneratorBundle documentation #
+# Welcome to the AdmigeneratorGeneratorBundle documentation! #
 
 ### What? ###
 
-The AdmingeneratorGeneratorBundle is an opensource admin-generator for the famous [Symfony2](http://www.symfony.com/) php framework. 
+The AdmingeneratorGeneratorBundle is an open source admin-generator for the famous [Symfony2](http://www.symfony.com/) php framework. 
 
-The term "generator" is used on purpose: the bundle actually generates PHP code in the cache directory, so you can easily read it, understand how it works, and overwrite it.
+The bundle generates PHP code in the cache directory, that can be easily read and understand. You can create all the functionality of an admin site, including: 
 
-### How does it work? ###
+*     **commands** that generate a bundle for an overall site (includes stubs for controllers) and those for creating a bundle within an existing bundle
+*     **setting up filters**, 
+*     **routing** that is integrated with the Symfony security framework
+*     **form generation supporting complete customization**: fields,field sets, labels, help text and validation. Complete form layout including multiple sections on the form,  sub forms and more
+*     **Twig Template generation**, and of course
+*     **Supports the Model Managers: Doctrine ORM, Doctrine ODM and Propel** 
 
-The bundle generates an entire administration based on a simple YAML configuration file. Here is an example generator configuration:
+All this from one simple file. 
+
+Edge cases are pushed far back since **extensibility is at the heart of the architecture**.  All components outlined above can be overridden by using standard inheritance (for controllers, Twig Templates and forms) or using the normal configuration setup in Symfony (routing for example).
+  
+### Who is this for? ###
+
+#### Developers looking for a rapid development process ####
+The primary goal is to simply and rapidly build an entire admin site. But additionally this can:
+
+*	be used in a similar way to the Symfony Interactive generators to **kick start your own development**, 
+*	refractor from this start and use the central yaml file to ensure that site components are consistent as you build out the development, and 
+*	be used as a simple way to "wire-frame" your application to show proof of concept functionality to other stake holders, and then used to firm up requirements.  
+
+#### Developers new to Symfony who wish to have an easy start  ####
+You can create your first web application using the generator *without writing a single line of code*. Then learn Symfony and examine or use the generated code even in a front end application.
+
+#### Used by other Bundle Developers ####
+The generator is really an integration component across bundles and Symfony components. It is envisaged that eventually the Symfony community could extend the class generator with the core team to be more universal.  For example integration with a CMS. But *we need your help to get this production ready*. All contributions are very welcome.
+
+#### 
+
+### Sound too good to be true, so how does it work? ###
+Simply you create a YAML file and in conjunction with your model metadata (ODM or ORM or Propel) generates: routing, form classes, the controllers and Twig template files.
+The rest of the documentation shows just how flexible and easy this is.  Take a look at the YAML file that shows **the creation of an entire site**:
 
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
@@ -45,7 +73,7 @@ params:
 builders:
   list:
     params:
-      title: Here is a beautifull title no  ???
+      title: Here is a beautiful title no  ???
       display: [ id, title, is_published, producer, release_date ]
       max_per_page: 3
       actions:
@@ -77,8 +105,6 @@ builders:
   delete: ~
 {% endhighlight %}
 
-
-The YAML configuration allows to customize the form classes, the controllers, and to generate a specific template, of course linked to your model and your ORM or ODM.
 
 ### In pictures
 
