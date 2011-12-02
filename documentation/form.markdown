@@ -109,12 +109,24 @@ edit:
     "Where is it ?": [[ location_id], [ zipcode, country ]]
 {% endhighlight %}
 
+Note: When you use sections each has to be properly defined on their own **separate** line:
+
 <div class="tabber">
-    <div class="tabbertab" title="You can do">
+    <div class="tabbertab" title="You can't do">
     
 {% highlight yaml %}
 new:
   display: [ title, [ name, firstname ] ]
+{% endhighlight %}
+
+    </div>
+    
+    <div class="tabbertab" title="You have to do ">
+    
+{% highlight yaml %}
+new:
+  display: 
+    NONE: [ [title], [ name, firstname ] ]
 {% endhighlight %}
 
     </div>
@@ -124,7 +136,7 @@ new:
 {% highlight yaml %}
 new:
   display: 
-    NONE: [ [title], [ name, firstname ] ]
+    NONE: [ title, [ name, firstname ] ]
 {% endhighlight %}
 
     </div>
