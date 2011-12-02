@@ -29,8 +29,9 @@ Of course if you want to contribute, you're welcome
 * [Actions](documentation/list.html#actions)
 * [Edit query](documentation/list.html#edit-query)
 
-#### Fields configuration for list
+### Fields configuration for list
 
+* [Overview](documentation/fields-for-list.html#overview)
 * [Label](documentation/fields-for-list.html#label)
 * [Sort](documentation/fields-for-list.html#sort)
 * [Getter](documentation/fields-for-list.html#getter)
@@ -42,6 +43,8 @@ Of course if you want to contribute, you're welcome
 
 ### New / Edit form configuration 
 
+* [Overview](documentation/form.html#overview)
+* [Title](documentation/form.html#title)
 * [Display fields](documentation/form.html#display)
 * [Overwrite the rendering of a field](documentation/form.html#overwrite-the-rendering-of-a-field)
 * [Choose your types](documentation/form-advanced.html#choose-your-types)

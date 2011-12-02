@@ -8,6 +8,7 @@ title: Roadmap
 I'm happy to present you the roadmap, feel free to propose complete, clicking the button fork and edit at bottom of this page.
 
 ## Now to 1.0
+The first production release will be 1.0.  
 
 ### Core :
 

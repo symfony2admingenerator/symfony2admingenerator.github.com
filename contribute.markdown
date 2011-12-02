@@ -5,8 +5,10 @@ title: Contribute
 
 # How To Contribute ? #
 
-You just have to _fork_ the [Admingenerator project on github](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle) and
-provide Pull Requests or submit issues.
+Here are the best ways you can contribute to the project.
+
+You just  _fork_ the [Admingenerator project on github](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle) and then
+provide Pull Requests and /or submit issues.
 
 ## Submit an issue ##
 
@@ -17,17 +19,15 @@ The ticketing system hosted on Github:
 
 ## Make a Pull Request ##
 
-The best way to submit a patch is to make a Pull Request on Github. First, you should create a new branch from the `master`.
-Assuming you are in your local project:
+The best way to submit a patch is to make a Pull Request on Github. First, create a new branch from  `master` and then from your local project type:
 
 {% highlight bash %}
 > git checkout -b master fix-my-patch
 {% endhighlight %}
 
-Now you can write your patch in this branch. Don't forget to provide unit tests with your fix to prove both the bug and the patch.
-It will ease the process to accept or refuse a Pull Request.
+Now make your changes in this branch. Important: Please provide unit tests with your patch. This will expedite the Pull request to prove that the patch actually fixes the bug.
 
-When you're done, you have to rebase your branch to provide a clean and safe Pull Request.
+Then when you are done, you need to rebase your branch to provide a clean and safe Pull Request.
 
 {% highlight bash %}
 > git checkout master
@@ -63,7 +63,7 @@ In order to run the tests, you must install PHPUnit:
 
 ## Running Functionnal Tests ##
 
-We are start building behat tests, you can run on the AdmingeneratorIpsum project with your fork as vendor
+We are starting to build behat tests, which you can run on the AdmingeneratorIpsum project with your fork as vendor
 
 {% highlight bash %}
 app/console -e=test behat --init @AdmingeneratorGeneratorBundle

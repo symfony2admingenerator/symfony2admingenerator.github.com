@@ -30,7 +30,7 @@ builders:
 
 ### Create groups
 
-Like you see on the previous sample, you have to group your scopes. In a group scopes are exculsives between each other. And you can combine scope between groups.
+Like you see on the previous sample, you have to group your scopes. In a group scopes are exclusive between each other. And you can combine scope between groups.
 
 ### Determine filters methods
 
