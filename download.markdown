@@ -7,8 +7,12 @@ title: Download
 </div>
 <script>
 $(document).ready(function() {
-	$.get("http://dl.symfony2admingenerator.org/",function(data) {
-	  	$('#downloads').html(data);
-	  });
+	$.ajax({
+		url: "http://dl.symfony2admingenerator.org/",
+		dataType: "jsonp",
+		});
 });
+function content(data) {
+	$('#downloads').html(data);
+}
 </script>
