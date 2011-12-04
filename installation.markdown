@@ -26,7 +26,7 @@ The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/Admingenera
 
 <div style="float: left">
 
-![Download icon](http://symfony2admingenerator.org/images/load.png)
+<img src="http://symfony2admingenerator.org/images/load.png" />
 	
 </div>
 Ok windows need also his admingeneratorIpsum usable project. So for you i download and package the admingenerator ipum and all his deps nightly.
