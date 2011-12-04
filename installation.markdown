@@ -22,15 +22,17 @@ The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/Admingenera
 > ./rebuild.sh
 {% endhighlight %}
 
-#### You work on windows :( ####
+### You work on windows :( ###
 
 <div style="float: left">
 
-<img src="http://symfony2admingenerator.org/images/load.png" />
+<img src="http://symfony2admingenerator.org/images/load.png" style="border:0" />
 	
 </div>
 Ok windows need also his admingeneratorIpsum usable project. So for you i download and package the admingenerator ipum and all his deps nightly.
 [Click here to go to downloads](/download.html)
+
+<div style="clear: left"></div>
 
 ### Your own symfony2 project ###
 Configure your own project in the standard Symfony2 way. 
