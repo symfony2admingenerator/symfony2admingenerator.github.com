@@ -18,6 +18,7 @@ The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/Admingenera
 {% highlight bash %}
 > git clone git://github.com/cedriclombardot/AdmingeneratorIpsum.git
 > cd AdmingeneratorIpsum
+> cp app/config/parameters.yml.sample app/config/parameters.yml
 > ./bin/vendors install
 > ./rebuild.sh
 {% endhighlight %}
