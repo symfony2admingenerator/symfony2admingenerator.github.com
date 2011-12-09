@@ -100,8 +100,8 @@ $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
 ### Install KnpMenuBundle 
 
 {% highlight bash %}
-git submodule add https://github.com/knplabs/KnpMenuBundle.git vendor/bundles/Knp/Bundle/MenuBundle
-git submodule add https://github.com/knplabs/KnpMenu.git vendor/KnpMenu
+git submodule add https://github.com/KnpLabs/KnpMenuBundle.git vendor/bundles/Knp/Bundle/MenuBundle
+git submodule add https://github.com/KnpLabs/KnpMenu.git vendor/KnpMenu
 {% endhighlight %}
 
 Register it in the `autoload.php` file:
