@@ -49,7 +49,7 @@ git submodule add git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle
 Or, if you use deps file:
 
 {% highlight bash %}
-[AdminGenerator]
+[AdmingeneratorGeneratorBundle]
     git=git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git
     target=/bundles/Admingenerator/GeneratorBundle
 {% endhighlight %}
