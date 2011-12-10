@@ -5,7 +5,7 @@ title: Installation
 
 # How to install
 ##Overview
-You have two methods to install the project using a pre-configured bundle or your own custom install.  
+You have two methods to install the project: using a pre-configured bundle or your own custom install.  
 
 ### With the AdmingeneratorIpsum fully configured base project ###
 The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
@@ -23,24 +23,35 @@ The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/Admingenera
 > ./rebuild.sh
 {% endhighlight %}
 
-### You work on windows :( ###
+### You work on Windows :( ###
 
 <div style="float: left">
 
 <img src="http://symfony2admingenerator.org/images/load.png" style="border:0" />
 	
 </div>
-Ok windows need also his admingeneratorIpsum usable project. So for you i download and package the admingenerator ipum and all his deps nightly.
+Ok, Windows need also his AdmingeneratorIpsum usable project. So for you I downloaded and packaged the admingenerator ipsum and all his deps nightly.
 [Click here to go to downloads](/download.html)
 
 <div style="clear: left"></div>
 
-### Your own symfony2 project ###
+### Your own Symfony2 project ###
 Configure your own project in the standard Symfony2 way. 
  
 ##Full Custom Installation
+
+First add the AdminGenerator submodule to your project:
+
 {% highlight bash %}
 git submodule add git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git vendor/bundles/Admingenerator/GeneratorBundle
+{% endhighlight %}
+
+Or, if you use deps file:
+
+{% highlight bash %}
+[AdmingeneratorGeneratorBundle]
+    git=git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git
+    target=/bundles/Admingenerator/GeneratorBundle
 {% endhighlight %}
 
 Register it in the `autoload.php` file:
@@ -75,8 +86,18 @@ public function registerBundles()
 
 ### Install SensioGeneratorBundle (if you're not on a symfony-standard)
 
+Add the bundle as a submodule:
+
 {% highlight bash %}
 git submodule add git://github.com/sensio/SensioGeneratorBundle.git vendor/bundles/Sensio/Bundle/GeneratorBundle
+{% endhighlight %}
+
+Or for the deps method:
+
+{% highlight bash %}
+[SensioGeneratorBundle]
+    git=git://github.com/sensio/SensioGeneratorBundle.git
+    target=/bundles/Sensio/Bundle/GeneratorBundle
 {% endhighlight %}
 
 Register it in the `autoload.php` file:
@@ -99,9 +120,23 @@ $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
 
 ### Install KnpMenuBundle 
 
+Adding Git submodules:
+
 {% highlight bash %}
 git submodule add https://github.com/KnpLabs/KnpMenuBundle.git vendor/bundles/Knp/Bundle/MenuBundle
 git submodule add https://github.com/KnpLabs/KnpMenu.git vendor/KnpMenu
+{% endhighlight %}
+
+Or with `deps` file:
+
+{% highlight bash %}
+[KnpMenuBundle]
+    git=https://github.com/KnpLabs/KnpMenuBundle.git
+    target=/bundles/Knp/Bundle/MenuBundle
+
+[KnpMenu]
+    git=https://github.com/KnpLabs/KnpMenu.git
+    target=/KnpMenu
 {% endhighlight %}
 
 Register it in the `autoload.php` file:
@@ -112,7 +147,7 @@ Register it in the `autoload.php` file:
 
 $loader->registerNamespaces(array(
     'Knp'       => __DIR__.'/../vendor/bundles',
-    'Knp\Menu'  => __DIR__.'/../vendor/KnpMenu/src',
+    'Knp\\Menu'  => __DIR__.'/../vendor/KnpMenu/src',
 ));
 {% endhighlight %}
 
@@ -130,6 +165,12 @@ knp_menu:
 {% endhighlight %}
 
 ### Now two ways to continue the setup :
+
+First of all, do not forget to install above vendors:
+
+{% highlight bash %}
+php bin/vendors install
+{% endhighlight %}
 
 Manually, follow the end of readme, or automatically ([http://www.youtube.com/watch?v=c5Q2v8llnNU&feature=youtu.be&hd=1](http://www.youtube.com/watch?v=c5Q2v8llnNU&feature=youtu.be&hd=1)), 
 
@@ -193,7 +234,7 @@ jms_security_extra:
 At this step, you'll have to install the Model Manager you want (Doctrine ORM, Doctrine ODM and/or Propel).
 E.g. with Doctrine, you'll have to setup the Doctrine2FixtureBundle bundle.
 
-#### Install Doctrine2FixtureBundle & Create the database
+#### Install Doctrine2FixtureBundle & create the database
 
 {% highlight bash %}
 php app/console doctrine:database:create
@@ -201,7 +242,7 @@ php app/console doctrine:schema:create
 php app/console doctrine:fixtures:load  
 {% endhighlight %}
 
-### Install Assetic (Optionnal see without assetic part)
+### Install Assetic (Optional see without assetic part)
 
 {% highlight bash %}
 git submodule add git://github.com/symfony/AsseticBundle.git vendor/bundles/Symfony/Bundle/AsseticBundle
