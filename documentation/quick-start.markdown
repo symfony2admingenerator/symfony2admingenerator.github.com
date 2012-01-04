@@ -15,7 +15,7 @@ In your symfony project, you've got two ways to init an admin bundle :
 
 ### With the SensioGeneratorBundle
 
-In a schell write :
+In a shell write :
 
 {% highlight bash %}
 > php app/console generate:bundle
