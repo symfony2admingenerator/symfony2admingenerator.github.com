@@ -23,7 +23,6 @@ The default label is the column name, but you can specify it directly:
 {% highlight yaml %}
 params:
   fields:
-    params:
       producer:
         label: Producer name
 {% endhighlight %}
@@ -40,7 +39,6 @@ You can set option sort_on or sortOn (option are camelized at reading time)
 {% highlight yaml %}
 params:
   fields:
-    params:
       producer:
         sort_on: producer.name
 {% endhighlight %}
@@ -54,7 +52,6 @@ The default getter is get*Field*, you can edit it with the `getter` option
 {% highlight yaml %}
 params:
   fields:
-    params:
       producer:
         getter: MyOwn
 {% endhighlight %}
@@ -66,7 +63,6 @@ And of course you can chain getter to make `$movie->getMyOwn()->getLabel()`
 {% highlight yaml %}
 params:
   fields:
-    params:
       producer:
         getter: MyOwn.Label
 {% endhighlight %}
