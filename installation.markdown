@@ -310,6 +310,32 @@ Publish assets:
 php app/console assets:install web/
 {% endhighlight %}
 
+### Choose the ORM/ODM you want to use
+
+In app/config.yml
+
+<div class="tabber">
+    <div class="tabbertab" title="Propel">
+{% highlight yaml %}
+admingenerator_generator:
+    use_propel: true
+{% endhighlight %}
+   </div>
+   <div class="tabbertab" title="Doctrine ORM">
+{% highlight yaml %}
+admingenerator_generator:
+    use_doctrine_orm: true
+{% endhighlight %}
+   </div>
+   <div class="tabbertab" title="Doctrine ODM">
+{% highlight yaml %}
+admingenerator_generator:
+    use_doctrine_odm: true
+{% endhighlight %}
+   </div>
+</div>
+
+
 ### Last step
 
 Configure the dev environment:
