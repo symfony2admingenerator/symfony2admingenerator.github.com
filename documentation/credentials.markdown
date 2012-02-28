@@ -4,7 +4,6 @@ title: Check credentials
 ---
 
 # Security: Check credentials ?
-IMPORTANT NOTE:  This feature is not formally  released.  Please monitor the [roadmap](/roadmap.html) section to see when this is ready.
 
 ## For actions
 
