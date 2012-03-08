@@ -54,3 +54,4 @@ Of course if you want to contribute, you're welcome
 
 * [For Actions](documentation/credentials.html#for-actions)
 * [For columns and forms](documentation/credentials.html#for-columns-and-forms)
+* [ACL implementation](documentation/credentials.html#symfony-acl)

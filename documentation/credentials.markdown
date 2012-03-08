@@ -47,3 +47,22 @@ params:
     fieldName:
       credentials: 'hasRole("ROLE_A") or (hasRole("ROLE_B") and hasRole("ROLE_C"))'
 {% endhighlight %}
+
+## Symfony ACL
+
+You'll probably want to use the symfony ACL, for example to check the `OWNER` permission
+
+{% highlight yaml %}
+params:
+  fields:
+    fieldName:
+      credentials: 'hasPermission(object, "OWNER")'
+{% endhighlight %}
+
+>**Tip**<br />You must keep the object variable name DO NOT REPLACE with your model name
+
+For the symfony doc read it :
+
+* [http://symfony.com/doc/2.0/reference/configuration/security.html](http://symfony.com/doc/2.0/reference/configuration/security.html)
+* [http://symfony.com/doc/2.0/cookbook/security/acl_advanced.html](http://symfony.com/doc/2.0/cookbook/security/acl_advanced.html)
+
