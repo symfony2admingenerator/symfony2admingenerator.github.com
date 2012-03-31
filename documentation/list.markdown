@@ -133,7 +133,7 @@ builders:
           route: my_custom_route
 {% endhighlight %}
 
-You can add a confirm message like of the [Object actions](documentation/list.html#object-actions)
+You can add a confirm message like of the [Object actions](/documentation/list.html#object-actions)
 
 The default label is the name of the action, [translated in your language](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/tree/master/Resources/translations) by the catalog Admingenerator
 
