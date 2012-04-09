@@ -84,6 +84,17 @@ public function registerBundles()
 }
 {% endhighlight %}
 
+Add Configuration in `config.yml`:
+
+{% highlight yaml %}
+admingenerator_generator:
+    twig:
+        date_format: 'd-M-Y'
+        number_format:
+            decimal: 2
+            decimal_point: " , "
+{% endhighlight %}
+
 ### Install SensioGeneratorBundle (if you're not on a symfony-standard)
 
 Add the bundle as a submodule:
