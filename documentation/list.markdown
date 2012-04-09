@@ -278,4 +278,36 @@ protected function getQuery()
 
 If you want to have by default all the movies published only. 
 
+## Configuration
 
+### Date format
+
+For field with type date Admingenerator use twig filter date.
+The date filter formats a date to a given format:
+
+{% highlight php %}
+{{ post.published_at|date }}
+{% endhighlight %}
+
+Default Admingenerator format is 'Y-m-d'. This default can be easily changed in your config.yml :
+{% highlight yaml %}
+admingenerator_generator:
+  twig:
+    date_format: 'm/d/Y'
+{% endhighlight %}
+
+### Number format
+
+For field with type date Admingenerator use twig filter date.
+The date filter formats a date to a given format:
+
+{% highlight php %}
+{{ post.published_at|date }}
+{% endhighlight %}
+
+Default Admingenerator format is 'Y-m-d'. This default can be easily changed in your config.yml :
+{% highlight yaml %}
+admingenerator_generator:
+  twig:
+    date_format: 'm/d/Y'
+{% endhighlight %}
