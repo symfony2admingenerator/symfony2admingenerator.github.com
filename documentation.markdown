@@ -17,6 +17,7 @@ Of course if you want to contribute, you're welcome
 
 * [Generators](documentation/generators.html)
 * [Bundle in Acme/Bundle/TestBundle ?](documentation/generator-params.html)
+* [Custom stylesheets](documentation/generator-params.html#custom-stylesheets)
 
 ### List
 
