@@ -114,7 +114,7 @@ $loader->registerNamespaces(array(
 Add it to the `AppKernel` class:
 
 {% highlight php %}
-$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
+$bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 {% endhighlight %}
 
 
@@ -217,7 +217,7 @@ $loader->registerNamespaces(array(
 Add it to the `AppKernel` class:
 
 {% highlight php %}
-$bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+$bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
 {% endhighlight %} 
 
 ### Configure JMS Security
@@ -263,7 +263,7 @@ $loader->registerNamespaces(array(
 Add it to the `AppKernel` class:
 
 {% highlight php %}
-$bundles[] = new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+$bundles[] = new Symfony\Bundle\AsseticBundle\AsseticBundle();
 {% endhighlight %}
 
 Configure the routing in `app/config/routing.yml`:
