@@ -10,7 +10,7 @@ You have two methods to install the project: using a pre-configured bundle or yo
 ### With the AdmingeneratorIpsum fully configured base project ###
 The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
 
-*  **to have a Fast Start:**  with  all the dependencies carefully configured with multiple templates - including Propel, Doctrine ORM, ORD.
+*  **to have a Fast Start:**  with  all the dependencies carefully configured with multiple templates - including Propel, Doctrine ORM, ODM.
 *  **to try out all the features:** with working examples of generator configuration, models and documentation.
 *  **to contribute** to the generator project using a known starting configuration, and 
 *  **to see how  site access control** is configured . It comes preconfigured with the FOS_UserBundle.
