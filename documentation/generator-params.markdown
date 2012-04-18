@@ -28,7 +28,7 @@ Sometimes, you'll want to add your own css in the theme. Two way to do that :
 admingenerator_generator:
     stylesheets:
       - { path: bundles/mybundle/css/backend.css }
-	  - { path: bundles/mybundle/css/print.css, media: print }
+      - { path: bundles/mybundle/css/print.css, media: print }
 {% endhighlight %}
 
 ### In the generator.yml
@@ -38,5 +38,5 @@ params:
   model: ......
   stylesheets:
     - bundles/mybundle/css/backend.css
-	- { path: bundles/mybundle/css/tv.css, media: tv }
+    - { path: bundles/mybundle/css/tv.css, media: tv }
 {% endhighlight %}
