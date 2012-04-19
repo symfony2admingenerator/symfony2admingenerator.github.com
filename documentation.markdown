@@ -30,6 +30,13 @@ Of course if you want to contribute, you're welcome
 * [Actions](documentation/list.html#actions)
 * [Edit query](documentation/list.html#edit-query)
 
+### Nestedset List (only for propel)
+
+The main option ar same as `List`configuration, this section will present changes
+
+* [Routing configuration](documentation/nestedset-list.html#routing-configuration)
+* [Generator configuration](documentation/nestedset-list.html#generator-configuration)
+
 ### Fields configuration for list
 
 * [Overview](documentation/fields-for-list.html#overview)
