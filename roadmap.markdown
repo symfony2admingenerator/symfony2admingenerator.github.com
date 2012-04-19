@@ -17,7 +17,7 @@ The first production release will be 1.0.
 * <strike>Implement credentials for actions and columns</strike> 
 * <strike>Implement non HTML5 validators [#17](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/17)</strike> Moved to 1.1
 * <strike>Implement the `owner` credential</strike>
-* Implement nested set for propel
+* Implement nested set for <strike>propel and</strike> doctrine
 * Fix mongodb types [#31](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/31)
 
 ### ActiveAdminTheme :
