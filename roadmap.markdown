@@ -16,6 +16,8 @@ The first production release will be 1.0.
 * <strike>Make a magic installer [#33](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/33)</strike>
 * <strike>Implement credentials for actions and columns</strike> 
 * <strike>Implement non HTML5 validators [#17](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/17)</strike> Moved to 1.1
+* <strike>Implement the `owner` credential</strike>
+* Implement nested set for propel
 * Fix mongodb types [#31](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/31)
 
 ### ActiveAdminTheme :
@@ -37,7 +39,6 @@ The first production release will be 1.0.
 * Implement a show action with chained admin to make easy to edit related objects
 * Adding tests and behat tests
 * Add batch actions
-* Implement the `owner` credential
 * Implement non HTML5 validators [#17](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues/17)
 
 ### Menu
