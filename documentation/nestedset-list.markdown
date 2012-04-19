@@ -28,7 +28,7 @@ In generator.yml replace `list` by `nested_list`
 builders:
   nested_list:
     params:
-      title: Liste des cat�gories
+      title: Liste des categories
       display: ~
       actions:
         new: ~
