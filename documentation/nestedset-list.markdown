@@ -22,13 +22,13 @@ Admingenerator_demonested:
 
 ## Generator configuration
 
-In generator.yml replace `list`by `nested_list`
+In generator.yml replace `list` by `nested_list`
 
 {% highlight yaml %}
 builders:
   nested_list:
     params:
-      title: Liste des catégories
+      title: Liste des catï¿½gories
       display: ~
       actions:
         new: ~
