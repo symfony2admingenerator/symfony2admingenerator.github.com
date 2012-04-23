@@ -25,6 +25,7 @@ The parameters include: title, fields, display and list.  Here is an example for
       actions:
         list: ~
 {% endhighlight %}  
+
 This simple definition:
 
 *   Sets the edit page title, including **twig display** of any field from the model
@@ -55,8 +56,9 @@ and overwrite the Twig Block named form_**title** with your own as follows:
 {% endhighlight %}
 
 >**Tip**<br />This field will be parsed by twig so you could use all the power of filters...
+
 ## Fields
-This section is [a large topic refer to](/fields-for-list.html) as well.
+This section is [a large topic refer to](/documentation/fields-for-list.html) as well.
 Fields allow tight integration between your model and the forms, by using the full power and flexibility of the symfony form components. This is where you setup:
 
 *     subforms that are related in your model 
