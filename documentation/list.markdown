@@ -69,7 +69,7 @@ builders:
       sort: [ producer.name, DESC ]
 {% endhighlight %}
 
-With the first argument, the column to sort and the second one optionnal the sorting order ASC or DESC (default: ASC)
+With the first argument, the column to sort and the second one optional the sorting order ASC or DESC (default: ASC)
 
 ## Object actions
 
