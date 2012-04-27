@@ -28,6 +28,7 @@ Of course if you want to contribute, you're welcome
 * [Default sort](documentation/list.html#default-sort)
 * [Object actions](documentation/list.html#object-actions)
 * [Actions](documentation/list.html#actions)
+* [Batch Actions](documentation/list-batch-actions.html)
 * [Edit query](documentation/list.html#edit-query)
 
 ### Nestedset List (only for propel)
