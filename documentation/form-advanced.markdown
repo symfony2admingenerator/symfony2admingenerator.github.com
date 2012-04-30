@@ -68,6 +68,8 @@ params:
   fields:
     actors:
       formType: collection
+      extras:
+        new_label: New actor # By default is an autoincrement
       addFormOptions:
         type: \Admingenerator\PropelDemoBundle\Form\Type\ActorType
 {% endhighlight %}
