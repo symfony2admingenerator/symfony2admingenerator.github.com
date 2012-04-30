@@ -144,6 +144,22 @@ new:
     </div>
 </div>
 
+## Tabs
+
+If you want to display tabs wich contains fieldsets use
+
+{% highlight yaml %}
+builders:
+  list:
+    params:
+      tabs: 
+        "My First Tab title":
+          "MyFieldset": [ field1, [ field2, field3 ]]
+          "MyFieldset2": # ....
+        "My Second tab":
+          "MyFieldset2": # ...
+{% endhighlight %}
+
 ### Overwrite the rendering of a field
 
 Edit the file : YourBundle/Resources/views/(Edit|New)/index.html
