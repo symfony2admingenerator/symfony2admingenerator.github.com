@@ -104,6 +104,17 @@ class ActorType extends AbstractType
 }
 {% endhighlight %}
 
+### Use your own type class
+
+See [http://symfony.com/doc/current/book/forms.html#embedding-a-single-object](http://symfony.com/doc/current/book/forms.html#embedding-a-single-object)
+
+{% highlight yaml %}
+params:
+  fields:
+    release_date:
+      formType: \MyCompagny\MyBundle\Type\MyType
+{% endhighlight %}
+
 ## Attach a dbType to a virtual field
 
 If you want to use a virtual field, depending on the type you want to use (e.g. a dateType, a text input, or a collection), you have to overwrite the `dbType`:
