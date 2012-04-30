@@ -160,7 +160,7 @@ builders:
           "MyFieldset2": # ...
 {% endhighlight %}
 
-### Overwrite the rendering of a field
+## Overwrite the rendering of a field
 
 Edit the file : YourBundle/Resources/views/(Edit|New)/index.html
 
