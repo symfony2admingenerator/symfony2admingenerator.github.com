@@ -282,7 +282,7 @@ If you want to have by default all the movies published only.
 
 ### Date format
 
-You can use to different options for date field in list.
+You can use two different options for date field in list.
 
 For example:
 <pre>
