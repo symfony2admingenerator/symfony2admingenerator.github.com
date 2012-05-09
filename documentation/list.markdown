@@ -295,61 +295,61 @@ dimanche 9 novembre 2012 23:54:47 GMT+00:00
 
 For use second option you must set parameter use_localized_date:
 
-{% highlight yaml %}
+<pre>
 admingenerator_generator:
   twig:
     use_localized_date: true
-{% endhighlight %}
+</pre>
 
 For field with type date Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
-{% highlight php %}
+<pre>
 {{ post.published_at|date('Y-m-d') }}
-{% endhighlight %}
+</pre>
  
 Default Admingenerator date format is 'Y-m-d'. This default can be easily changed in your config.yml :
-{% highlight yaml %}
+<pre>
 admingenerator_generator:
   twig:
     date_format: 'm/d/Y'
-{% endhighlight %}
+</pre>
 
 For field with type datetime Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
-{% highlight php %}
+<pre>
 {{ post.published_at|date('Y-m-d H:i:s') }}
-{% endhighlight %}
+</pre>
  
 Default Admingenerator datetime format is 'Y-m-d H:i:s'. This default can be easily changed in your config.yml :
-{% highlight yaml %}
+<pre>
 admingenerator_generator:
   twig:
     date_format: 'm/d/Y H:i'
-{% endhighlight %}
+</pre>
 
 For field with type date and use localized format Admingenerator use twig filter localizeddate.
 The localizeddate filter format a date to a given format:
 
-{% highlight php %}
+<pre>
 {{ post.published_at|localizeddate("medium", "none") }}
-{% endhighlight %}
+</pre>
 
 For field with type datetime and use localized format Admingenerator use twig filter localizeddate.
 The localizeddate filter format a date to a given format:
 
-{% highlight php %}
+<pre>
 {{ post.published_at|localizeddate("medium", "medium") }}
-{% endhighlight %}
+</pre>
  
 In your config.yml you can specify format for localizeddate filter:
-{% highlight yaml %}
+<pre>
 admingenerator_generator:
   twig:
     localized_date_format: 'full'
     localized_datetime_format: 'full'
-{% endhighlight %}
+</pre>
 
 [More about intldateformatter](http://php.net/manual/en/class.intldateformatter.php)
 
