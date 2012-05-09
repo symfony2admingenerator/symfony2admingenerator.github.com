@@ -285,14 +285,14 @@ If you want to have by default all the movies published only.
 You can use to different options for date field in list.
 
 For example:
-
 <pre>
 11/09/2012
 </pre>
 or
-<code>
+<pre>
 dimanche 9 novembre 2012 23:54:47 GMT+00:00
-</code>
+</pre>
+
 For use second option you must set parameter use_localized_date:
 
 {% highlight yaml %}
@@ -305,15 +305,53 @@ For field with type date Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
 {% highlight php %}
-{{ post.published_at|date }}
+{{ post.published_at|date('Y-m-d') }}
 {% endhighlight %}
-
+ 
 Default Admingenerator date format is 'Y-m-d'. This default can be easily changed in your config.yml :
 {% highlight yaml %}
 admingenerator_generator:
   twig:
     date_format: 'm/d/Y'
 {% endhighlight %}
+
+For field with type datetime Admingenerator use twig filter date.
+The date filter format a date to a given format:
+
+{% highlight php %}
+{{ post.published_at|date('Y-m-d H:i:s') }}
+{% endhighlight %}
+ 
+Default Admingenerator datetime format is 'Y-m-d H:i:s'. This default can be easily changed in your config.yml :
+{% highlight yaml %}
+admingenerator_generator:
+  twig:
+    date_format: 'm/d/Y H:i'
+{% endhighlight %}
+
+For field with type date and use localized format Admingenerator use twig filter localizeddate.
+The localizeddate filter format a date to a given format:
+
+{% highlight php %}
+{{ post.published_at|localizeddate("medium", "none") }}
+{% endhighlight %}
+
+For field with type datetime and use localized format Admingenerator use twig filter localizeddate.
+The localizeddate filter format a date to a given format:
+
+{% highlight php %}
+{{ post.published_at|localizeddate("medium", "medium") }}
+{% endhighlight %}
+ 
+In your config.yml you can specify format for localizeddate filter:
+{% highlight yaml %}
+admingenerator_generator:
+  twig:
+    localized_date_format: 'full'
+    localized_datetime_format: 'full'
+{% endhighlight %}
+
+[More about intldateformatter](http://php.net/manual/en/class.intldateformatter.php)
 
 ### Number format
 
