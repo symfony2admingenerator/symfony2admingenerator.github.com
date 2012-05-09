@@ -286,13 +286,14 @@ You can use to different options for date field in list.
 
 For example:
 
+<pre>
 11/09/2012
-
+</pre>
 or
-
+<code>
 dimanche 9 novembre 2012 23:54:47 GMT+00:00
-
-For use second option you must set parameter use_localized_date
+</code>
+For use second option you must set parameter use_localized_date:
 
 {% highlight yaml %}
 admingenerator_generator:
