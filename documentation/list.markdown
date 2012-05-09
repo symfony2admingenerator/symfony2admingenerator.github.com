@@ -282,6 +282,24 @@ If you want to have by default all the movies published only.
 
 ### Date format
 
+You can use to different options for date field in list.
+
+For example:
+
+11/09/2012
+
+or
+
+dimanche 9 novembre 2012 23:54:47 GMT+00:00
+
+For use second option you must set parameter use_localized_date
+
+{% highlight yaml %}
+admingenerator_generator:
+  twig:
+    use_localized_date: true
+{% endhighlight %}
+
 For field with type date Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
