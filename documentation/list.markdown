@@ -305,8 +305,8 @@ admingenerator_generator:
 For field with type date Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
-{% highlight php %}
-{{ post.published_at|date('Y-m-d') }}
+{% highlight html+django %}
+{{ "{{" }}  post.published_at|date('Y-m-d') }}
 {% endhighlight %}
  
 Default Admingenerator date format is 'Y-m-d'. This default can be easily changed in your config.yml:
@@ -320,8 +320,8 @@ admingenerator_generator:
 For field with type datetime Admingenerator use twig filter date.
 The date filter format a date to a given format:
 
-{% highlight php %}
-{{ post.published_at|date('Y-m-d H:i:s') }}
+{% highlight html+django %}
+{{ "{{" }}  post.published_at|date('Y-m-d H:i:s') }}
 {% endhighlight %}
  
 Default Admingenerator datetime format is 'Y-m-d H:i:s'. This default can be easily changed in your config.yml:
@@ -335,15 +335,15 @@ admingenerator_generator:
 For field with type date and use localized format Admingenerator use twig filter localizeddate.
 The localizeddate filter format a date to a given format:
 
-{% highlight php %}
-{{ post.published_at|localizeddate("medium", "none") }}
+{% highlight html+django %}
+{{ "{{" }} post.published_at|localizeddate("medium", "none") }}
 {% endhighlight %}
 
 For field with type datetime and use localized format Admingenerator use twig filter localizeddate.
 The localizeddate filter format a date to a given format:
 
-{% highlight php %}
-{{ post.published_at|localizeddate("medium", "medium") }}
+{% highlight html+django %}
+{{ "{{" }}  post.published_at|localizeddate("medium", "medium") }}
 {% endhighlight %}
  
 In your config.yml you can specify format for localizeddate filter:
@@ -362,8 +362,8 @@ admingenerator_generator:
 For field with type decimal Admingenerator use twig filter number_format.
 The number_format filter format a number to a given format:
 
-{% highlight php %}
-{{ 200.35|number_format }}
+{% highlight html+django %}
+{{ "{{" }} 200.35|number_format }}
 {% endhighlight %}
 
 If no formatting options are provided then Admingenerator will use the default formatting options of:
