@@ -285,6 +285,7 @@ If you want to have by default all the movies published only.
 You can use to different options for date field in list.
 
 For example:
+
 <pre>
 11/09/2012
 </pre>
@@ -308,7 +309,8 @@ The date filter format a date to a given format:
 {{ post.published_at|date('Y-m-d') }}
 {% endhighlight %}
  
-Default Admingenerator date format is 'Y-m-d'. This default can be easily changed in your config.yml :
+Default Admingenerator date format is 'Y-m-d'. This default can be easily changed in your config.yml:
+
 {% highlight yaml %}
 admingenerator_generator:
   twig:
@@ -322,7 +324,8 @@ The date filter format a date to a given format:
 {{ post.published_at|date('Y-m-d H:i:s') }}
 {% endhighlight %}
  
-Default Admingenerator datetime format is 'Y-m-d H:i:s'. This default can be easily changed in your config.yml :
+Default Admingenerator datetime format is 'Y-m-d H:i:s'. This default can be easily changed in your config.yml:
+
 {% highlight yaml %}
 admingenerator_generator:
   twig:
@@ -344,6 +347,7 @@ The localizeddate filter format a date to a given format:
 {% endhighlight %}
  
 In your config.yml you can specify format for localizeddate filter:
+
 {% highlight yaml %}
 admingenerator_generator:
   twig:
@@ -367,7 +371,8 @@ If no formatting options are provided then Admingenerator will use the default f
 * . as the decimal point.
 * , as the thousands separator.
 
-This default can be easily changed in your config.yml :
+This default can be easily changed in your config.yml:
+
 {% highlight yaml %}
 admingenerator_generator:
   twig:
