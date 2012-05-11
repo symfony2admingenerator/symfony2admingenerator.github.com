@@ -7,6 +7,11 @@ title: Installation
 ##Overview
 You have two methods to install the project: using a pre-configured bundle or your own custom install.  
 
+### With the Symfony Ready to code a symfony-standard based project
+
+Configured with admingenerator and propel
+[http://symfony2admingenerator.org/symfony-ready-to-code/](http://symfony2admingenerator.org/symfony-ready-to-code/)
+
 ### With the AdmingeneratorIpsum fully configured base project ###
 The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
 
