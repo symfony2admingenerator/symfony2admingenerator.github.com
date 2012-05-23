@@ -340,16 +340,6 @@ admingenerator_generator:
    </div>
 </div>
 
-
-### Last step
-
-Configure the dev environment:
-
-{% highlight yaml %}
-admingenerator_generator:
-    overwrite_if_exists: true
-{% endhighlight %}
-
 ## Want to connect to FOSUserBundle ?
 
 Just setup the [AdmingeneratorUserBundle](https://github.com/cedriclombardot/AdmingeneratorUserBundle#readme)
