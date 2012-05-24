@@ -107,6 +107,16 @@
        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
+
+      $(document).ready(function() {
+    	  var url = window.location.href;
+    	  var parts = url.split('/');
+    	  var link = parts[3].replace('.html','');
+
+    	  $('header .nav a[href="\/'+link+'.html"]').each(function (key, elem) {
+        	  $(elem).parent().addClass('active');
+    	  });
+      });
      </script>
   
 
