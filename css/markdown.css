@@ -1,25 +1,51 @@
+.markdown {
+	line-height: auto;
+    font-size: 15px;
+    font-family: Tahoma;
+    color: #444;
+	}
+	
+.markdown p {
+	text-align: justify;
+	}
+	
+.markdown h1 {
+  width: 920px;
+  margin-top: 40px;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: left;
+  margin: 0 0 40px 0;
+  text-transform: capitalize;
+  text-align: center;
+  color: #000;
+  margin-bottom: 0;
+}
+
 .markdown h2 {
-  color:#0D5273;
+  color:#8E3557;
   padding-top:10px;
-  font-size: 1.8em;
+  font-size: 2.2em;
   font-weight:bold;
   margin:1.5em 0 0.8em 0;
-  border-top:6px solid #EC9A2A;
+  width: 100%;
 }
 
 .markdown h2 .link {
-  color:#0D5273;
+  color:#8E3557;
   text-decoration: none;
 }
 
 .markdown h3 {
-    color: #000000;
-    font-size: 1.6em;
+    color: #8E3557;
+    font-size: 2em;
     margin: 1em 0 0.5em;
+    font-weight: normal;
+    border-bottom: 2px solid #8E3557;
 }
 
 .markdown h4 {
-  color: #0D5273;
+  color: #8E3557;
   font-size:1.1em;
   font-style:italic;
   margin: 0 0 0.5em 0;
@@ -68,6 +94,8 @@
   margin-bottom: 1em;
   max-width:100%;
   overflow-y:auto;
+  font-size:13px;
+  margin-top: 10px;
 }
 
 .markdown blockquote {

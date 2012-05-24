@@ -1,25 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>{{ page.title }}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="language" content="en" />
-    <link rel="stylesheet" type="text/css" media="all" href="http://yui.yahooapis.com/2.8.0r4/build/reset/reset-min.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/css/layout.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/css/markdown.css" />
+    <link type="text/css" href="/css/reset.css" media="all" rel="stylesheet">
+    <link type="text/css" href="/css/normalize.css" media="all" rel="stylesheet">
+    <link type="text/css" href="/css/pages.css" media="all" rel="stylesheet">
+    <link type="text/css" href="/css/markdown.css" media="all" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="all" href="/css/base_syntax.css" />
     <link rel="stylesheet" type="text/css" media="all" href="/css/syntax.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
-    <script type="text/javascript" src="/js/jquery.tableofcontents.min.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/js/tabber.js"></script>
     <link rel="stylesheet" type="text/css" media="all" href="/css/tabber.css" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.tableofcontents.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/tabber.js"></script>
   </head>
+
   <body>
-    <div id="fond">
-      <div class="layout">
-        <ul class="topmenu">
+    <div class="container">
+    <header>
+      <div class="inner">
+        <h1 class="logo">
+          <a href="/">AdmingeneratorGeneratorBundle <br /><span>The Symfony2 admingenerator</span></a>
+        </h1>
+
+        <ul class="nav">
           <li class="first element">
             <a class="link" href="/index.html">About</a>
           </li>
@@ -32,72 +39,61 @@
           <li class="element">
             <a class="link" href="/documentation.html">Documentation</a>
           </li>
-		  <li class="element">
+          <li class="element">
             <a class="link" href="/roadmap.html">Roadmap</a>
           </li>
-          <li class="last element">
+          <li class="element">
             <a class="link" href="/contribute.html">Contribute</a>
           </li>
           <li class="last element">
             <a class="link" href="/support.html">Support</a>
           </li>
         </ul>
-        <div class="search">
-        	<form action="/search.html">
-        		<input name="q" placeholder="Search..." type="text" />
-        		<input type="submit" value="Go" />
-        	</form>
-        </div>
-        <div id="banner">
-          <div id="text">
-            <a href="/">
-              <img src="/images/logo.png" alt="" id="logo" />
-              <h2 class="title">
-                AdmingeneratorGeneratorBundle<br />The Symfony2 admin (and more) generator
-              </h2>
-            </a>
-          </div>
-        </div>
-        <div class="ribbon">
-          <a href="https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle" rel="me">Fork me on GitHub</a>
-        </div>
-        <div class="content markdown">
-          {{ content }}
-          <p class="fork_and_edit">
-            Found a typo ? Something is wrong in this documentation ? Just <a href="http://github.com/cedriclombardot/cedriclombardot.github.com/edit/master{{ page.url|replace:'.html','' }}.markdown">fork and edit</a> it !
-          </p>
-        </div>
       </div>
-        <div class="bottom">
-          <p>
-            <ul>
-              <li class="first element">
-                <a class="link" href="/index.html">About</a>
-              </li>
-              <li class="element">
-                <a class="link" href="/installation.html">Installation</a>
-              </li>
-              <li class="last element">
-	            <a class="link" href="/screencasts.html">Screencasts</a>
-	          </li>
-			  <li class="element">
-				<a class="link" href="/roadmap.html">Roadmap</a>
-			  </li>
-              <li class="element">
-                <a class="link" href="/documentation.html">Documentation</a>
-              </li>
-              <li class="last element">
-                <a class="link" href="/contribute.html">Contribute</a>
-              </li>
-              <li class="last element">
-	            <a class="link" href="/support.html">Support</a>
-	          </li>
-             </ul>
-          </p>
-        </div>
+    </header>
+
+    <section id="top">
+      <div class="inner">
+        <h2>The <strong>generator.yml</strong><br>
+          power for your<br>
+          <strong>Symfony2</strong><br>
+          backends</h2>
+          
+          <div class="search">
+            <form action="/search.html" class="searchform">
+                <input name="q" placeholder="Search..." type="text" class="searchfield" />
+                <input type="submit" value="Go" class="searchbutton" />
+            </form>
+          </div>
+          
+          <div class="toc_zone">
+            <span class="toc_header">Table of contents</span>
+            <ul class="toc"></ul>
+          </div>
+      </div>
+    </section>
+
+    <div class="ribbon">
+       <a href="https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle" rel="me">Fork me on GitHub</a>
+    </div>
+    
+    <section id="content" class="markdown">
+      <div class="inner">
+        {{ content }}
+      </div>
+    </section>
+
+    <footer>
+          <div class="inner clearfix">
+            <p class="fork_and_edit">
+               Found a typo ? Something is wrong in this documentation ? Just <a href="http://github.com/cedriclombardot/cedriclombardot.github.com/edit/master{{ page.url|replace:'.html','' }}.markdown">fork and edit</a> it !
+            </p>
+           </div>
+    </footer>
 
     </div>
-    <script type="text/javascript">
+
+     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-25250509-1']);
       _gaq.push(['_trackPageview']);
@@ -107,5 +103,6 @@
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
        })();
      </script>
-  </body>
-</html>
+  
+
+</body></html>

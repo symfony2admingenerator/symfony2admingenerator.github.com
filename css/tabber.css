@@ -26,7 +26,7 @@ ul.tabbernav
 {
  margin:0;
  padding: 3px 0;
- border-bottom: 1px solid #778;
+ border-bottom: 1px solid #4C1B1B;
  font: bold 12px Verdana, sans-serif;
 }
 
@@ -41,32 +41,43 @@ ul.tabbernav li a
 {
  padding: 3px 0.5em;
  margin-left: 3px;
- border: 1px solid #778;
+ border: 1px solid #8E3557;
  border-bottom: none;
- background: #DDE;
+ 
+  background: -webkit-linear-gradient(top, #fafafa, #eaeaea);
+  background: -moz-linear-gradient(top, #fafafa, #eaeaea);
+  background: -ms-linear-gradient(top, #fafafa, #eaeaea);
+  background: -o-linear-gradient(top, #fafafa, #eaeaea);
+  background: linear-gradient(top, #fafafa, #eaeaea);
  text-decoration: none;
 }
 
-ul.tabbernav li a:link { color: #448; }
-ul.tabbernav li a:visited { color: #667; }
+ul.tabbernav li a { color: #8E3557; }
 
 ul.tabbernav li a:hover
 {
- color: #000;
- background: #AAE;
- border-color: #227;
+ color: #4C1B1B;
+ border-color: #4C1B1B;
 }
 
 ul.tabbernav li.tabberactive a
 {
- background-color: #fff;
+  background: -webkit-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -moz-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -ms-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -o-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: linear-gradient(bottom, #fafafa, #eaeaea);
  border-bottom: 1px solid #fff;
 }
 
 ul.tabbernav li.tabberactive a:hover
 {
- color: #000;
- background: white;
+ color: #4C1B1B;
+  background: -webkit-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -moz-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -ms-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: -o-linear-gradient(bottom, #fafafa, #eaeaea);
+  background: linear-gradient(bottom, #fafafa, #eaeaea);
  border-bottom: 1px solid white;
 }
 
