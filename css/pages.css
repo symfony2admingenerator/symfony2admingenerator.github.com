@@ -351,3 +351,8 @@ footer li {
     height: 30px;
     width: 600px;
 }
+.twitter {
+  position: absolute;
+    right: 55px;
+    top: 0;
+}
