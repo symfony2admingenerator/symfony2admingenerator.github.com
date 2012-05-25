@@ -96,7 +96,7 @@ builders:
         list: ~
   edit: 
     params:
-      title: You're editing the movie "{{ Movie.title }}"
+      title: You're editing the movie "{{ "{{" }} Movie.title }}"
       display: 
         "NONE": [ title, release_date ]
         "Other informations": [ is_published, producer, actors ]
