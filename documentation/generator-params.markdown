@@ -40,3 +40,28 @@ params:
     - bundles/mybundle/css/backend.css
     - { path: bundles/mybundle/css/tv.css, media: tv }
 {% endhighlight %}
+
+## Custom javascripts
+
+Sometimes, you'll want to add your own js in the theme. Two way to do that :
+
+### In the config.yml
+
+{% highlight yaml %}
+admingenerator_generator:
+    javascripts:
+      - bundles/mybundle/js/backend.js
+      - { path: bundles/mybundle/js/backend.js }
+      - { route: "fos_js_routing_js", routeparams: { callback: "fos.Router.setData"} }
+{% endhighlight %}
+
+### In the generator.yml
+
+{% highlight yaml %}
+params:
+  model: ......
+  javascripts:
+    - bundles/mybundle/js/backend.js
+    - { path: bundles/mybundle/js/backend.js }
+    - { route: "fos_js_routing_js", routeparams: { callback: "fos.Router.setData"} }
+{% endhighlight %}
