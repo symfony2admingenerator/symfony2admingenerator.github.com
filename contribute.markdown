@@ -22,7 +22,7 @@ The ticketing system hosted on Github:
 The best way to submit a patch is to make a Pull Request on Github. First, create a new branch from  `master` and then from your local project type:
 
 {% highlight bash %}
-> git checkout -b master fix-my-patch
+> git checkout -b fix-my-patch master
 {% endhighlight %}
 
 Now make your changes in this branch. Important: Please provide unit tests with your patch. This will expedite the Pull request to prove that the patch actually fixes the bug.
