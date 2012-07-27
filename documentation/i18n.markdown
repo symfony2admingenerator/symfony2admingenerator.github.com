@@ -7,20 +7,22 @@ title: Internationalization - i18n_catalogue
 
 ## General translations
 
-Common messages like "Add", "Save" or "Are you sure ?" reside in Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml.
+Common messages like "Add", "Save" or "Are you sure ?" are translated useing Admingenerator translation domain.  
 
-Currently supported languages are:
+>**Tip**<br />Admingenerator domain resides in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`  
 
-* Admingenerator.de.yml
-* Admingenerator.en.yml
-* Admingenerator.es.yml
-* Admingenerator.fr.yml
-* Admingenerator.it.yml
-* Admingenerator.pl.yml
-* Admingenerator.pt.yml
-* Admingenerator.ru.yml
-* Admingenerator.sl.yml
-* Admingenerator.uk.yml
+Currently supported languages are:  
+
+* English - Admingenerator.de.yml
+* German - Admingenerator.en.yml
+* Spanish - Admingenerator.es.yml
+* French - Admingenerator.fr.yml
+* Italian - Admingenerator.it.yml
+* Polish - Admingenerator.pl.yml
+* Portuguese - Admingenerator.pt.yml
+* Russian - Admingenerator.ru.yml
+* Slovenian - Admingenerator.sl.yml
+* Ukrainian - Admingenerator.uk.yml
 
 If your language is not listed above please [contribute](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle)!
 
@@ -36,12 +38,12 @@ params:
   # ...
 {% endhighlight %}
 
-If not set, the default domain will be "Admin".
+>**Tip**<br />If not set, the default domain will be "Admin".  
 
 This will tell Admingenerator to look for translations in: 
 
-* ../Resources/translations/YourTranslationDomain.xx.yml
-* ../Resources/translations/YourTranslationDomain.xx.xliff
+* `../Resources/translations/YourTranslationDomain.xx.yml`
+* `../Resources/translations/YourTranslationDomain.xx.xliff`
 
 ## Example
 
@@ -110,34 +112,38 @@ builders:
 
 ## Admin Menu translation
 
-Before you start translating menu, make sure you have told Admingenerator where to look for your admin menu.
+Before you start translating menu, make sure you have told Admingenerator where to look for your admin menu.  
 
-src: app/config.yml
+src: `app/config.yml`
+
 {% highlight yaml %}
 admingenerator_generator:
     knp_menu_class: Acme\DemoBundle\Menu\AdminMenu
 {% endhighlight %}
 
-AdminMenu is based on KnpMenuBundle. To translate KnpMenuBundle you need to overwrite the default menu template.
+AdminMenu is based on KnpMenuBundle. To translate KnpMenuBundle you need to overwrite the default menu template.  
 
-src: app/config.yml
+src: `app/config.yml`
+
 {% highlight yaml %}
 knp_menu:
     twig:
         template: AcmeDemoBundle::knp_menu.html.twig  # your custom knp_menu template
 {% endhighlight %}
 
-src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
+src: `Acme/DemoBundle/Resources/views/knp_menu.html.twig`
+
 {% highlight twig %}
-`{% extends 'knp_menu.html.twig' %}
-{% block label %}
-    {{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}
-{% endblock %}`
+`{% extends 'knp_menu.html.twig' %}`
+`{% block label %}`
+    `{{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}`
+`{% endblock %}`
 {% endhighlight %}
 
-Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.
+Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.  
 
-src: Acme/DemoBundle/Menu/AdminMenu.php
+src: `Acme/DemoBundle/Menu/AdminMenu.php`
+
 {% highlight php %}
 <?php
 // ...
@@ -157,7 +163,7 @@ public function createAdminMenu(Request $request)
 // ...
 {% endhighlight %}
 
-This will tell Admingenerator to look for translations in: 
+This will tell Admingenerator to look for translations in:  
 
-* ../Resources/translations/AcmeDemoBundle.xx.yml
-* ../Resources/translations/AcmeDemoBundle.xx.xliff
+* `../Resources/translations/AcmeDemoBundle.xx.yml`
+* `../Resources/translations/AcmeDemoBundle.xx.xliff`
