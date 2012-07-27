@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Internationalization - i18n_catalogue
+title: Internationalization
 ---
 
 # Internationalization
@@ -8,57 +8,44 @@ title: Internationalization - i18n_catalogue
 ## General translations
 
 Common messages like "Add", "Save" or "Are you sure ?" are translated useing Admingenerator translation domain.  
-
+  
+Currently supported languages: English, German, Spanish, French, Italian, Polish, Portuguese, Russian, Slovenian and Ukrainian.  
+  
 >**Tip**<br />Admingenerator domain resides in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`  
-
-Currently supported languages are:  
-
-* English - Admingenerator.de.yml
-* German - Admingenerator.en.yml
-* Spanish - Admingenerator.es.yml
-* French - Admingenerator.fr.yml
-* Italian - Admingenerator.it.yml
-* Polish - Admingenerator.pl.yml
-* Portuguese - Admingenerator.pt.yml
-* Russian - Admingenerator.ru.yml
-* Slovenian - Admingenerator.sl.yml
-* Ukrainian - Admingenerator.uk.yml
-
+  
 If your language is not listed above please [contribute](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle)!
-
+  
 ## Bundle specific translations
 
 In order to translate bundle specific messages you need to tell Admingenerator in which translation domain (i18n catalogue) it should look for translations.
-
+  
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
 params:
-  # ...
-  i18n_catalog: YourTranslationDomain 
-  # ...
+  i18n_catalog: YourTranslationDomain
 {% endhighlight %}
-
+  
 >**Tip**<br />If not set, the default domain will be "Admin".  
-
+  
 This will tell Admingenerator to look for translations in: 
-
+  
 * `../Resources/translations/YourTranslationDomain.xx.yml`
 * `../Resources/translations/YourTranslationDomain.xx.xliff`
 
 ## Example
 
 At the moment you can translate most of messages. Unfortunately translations with arguments are not yet supported (although I do plan to fix that).
-
+  
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
 params:
-  model: Acme\DemoBundle\Entity\Baloon
+  model: `Acme\DemoBundle\Entity\Baloon`
   namespace_prefix: Acme
   bundle_name: DemoBundle
   i18n_catalog: AcmeDemoBundle # tells Admingenerator to look for translations in AcmeDemoBundle.xx.yml
   fields:
     id:
-      label:  ID     # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
+      label:  ID  # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
     name:
       label:  baloon.name.label
     color:
@@ -69,11 +56,10 @@ params:
       extras:
         new_label: baloon.sandbags.new.label
       addFormOptions:
-        type: \Acme\DemoBundle\Form\Type\Baloon\EmbedSandbagType
+        type: `\Acme\DemoBundle\Form\Type\Baloon\EmbedSandbagType`
         allow_add: true
         allow_delete: true
         by_reference: false
-
 builders:
   list:
     params:
@@ -103,67 +89,65 @@ builders:
         list: ~
   edit:
     params:
-      title: Edit baloon "{{ Baloon.name }}" # not translated - translations with arguments are not yet supported
+      title: `Edit baloon "{{ Baloon.name }}"` # not translated - translations with arguments are not yet supported
       display: [ name, color, sandbags ]
       actions:
         list: ~
   delete: ~
 {% endhighlight %}
-
+  
 ## Admin Menu translation
 
 Before you start translating menu, make sure you have told Admingenerator where to look for your admin menu.  
-
+  
 src: `app/config.yml`
 
 {% highlight yaml %}
 admingenerator_generator:
-    knp_menu_class: Acme\DemoBundle\Menu\AdminMenu
+  knp_menu_class: Acme\DemoBundle\Menu\AdminMenu
 {% endhighlight %}
 
 AdminMenu is based on KnpMenuBundle. To translate KnpMenuBundle you need to overwrite the default menu template.  
-
+  
 src: `app/config.yml`
 
 {% highlight yaml %}
 knp_menu:
-    twig:
-        template: AcmeDemoBundle::knp_menu.html.twig  # your custom knp_menu template
+  twig:
+    template: AcmeDemoBundle::knp_menu.html.twig  # your custom knp_menu template
 {% endhighlight %}
-
+  
 src: `Acme/DemoBundle/Resources/views/knp_menu.html.twig`
 
 {% highlight twig %}
-`{% extends 'knp_menu.html.twig' %}`
-`{% block label %}`
-    `{{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}`
-`{% endblock %}`
+{{ '{%' }} extends 'knp_menu.html.twig' {{ '%}' }} 
+{{ '{%' }} block label {{ '%}' }} 
+  {{ '{{' }} item.label|trans(item.getExtra('translation_params', {{ '{}' }}), item.getExtra('translation_domain', 'messages')) {{ '}}' }}
+{{ '{%' }} endblock {{ '%}' }} 
 {% endhighlight %}
 
 Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.  
-
+  
 src: `Acme/DemoBundle/Menu/AdminMenu.php`
 
 {% highlight php %}
-<?php
-// ...
 public function createAdminMenu(Request $request)
-{
-    $menu = $this->factory->createItem('root');
+{{ '{' }}
+  $menu = $this->factory->createItem('root');
 
-    $menu->setchildrenAttributes(array('id' => 'main_navigation', 'class'=>'menu'));
+  $menu->setchildrenAttributes(array('id' => 'main_navigation', 'class'=>'menu'));
 
-    $media = $menu->addChild('admin.menu.baloon.label', array('uri' => '#'))
+  $baloons = $menu->addChild('admin.menu.baloon.label', array('uri' => '#'))
                   ->setExtra('translation_domain', 'AcmeDemoBundle');
-    $media->setLinkAttributes(array('class'=>'sub main'));
-    $media->addChild('admin.menu.baloon.baloons.label', array('route' => 'Acme_DemoBundle_Baloon_list'))
-                  ->setExtra('translation_domain', 'AcmeDemoBundle');
-    $media->addChild('admin.menu.baloon.sandbags.label', array('route' => 'Acme_DemoBundle_Sandbag_list'))
-                  ->setExtra('translation_domain', 'AcmeDemoBundle');
-// ...
+  $baloons->setLinkAttributes(array('class'=>'sub main'));
+  $baloons->addChild('admin.menu.baloon.baloons.label', array('route' => 'Acme_DemoBundle_Baloon_list'))
+          ->setExtra('translation_domain', 'AcmeDemoBundle');
+  $baloons->addChild('admin.menu.baloon.sandbags.label', array('route' => 'Acme_DemoBundle_Sandbag_list'))
+          ->setExtra('translation_domain', 'AcmeDemoBundle');
+{{ '}' }}
 {% endhighlight %}
-
+  
 This will tell Admingenerator to look for translations in:  
-
+  
 * `../Resources/translations/AcmeDemoBundle.xx.yml`
 * `../Resources/translations/AcmeDemoBundle.xx.xliff`
