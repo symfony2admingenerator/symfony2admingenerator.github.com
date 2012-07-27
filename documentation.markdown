@@ -59,6 +59,13 @@ The main option ar same as `List`configuration, this section will present change
 * [Choose your types](documentation/form-advanced.html#choose-your-types)
 * [Configure the success/error messages](documentation/success-error-messages.html)
 
+### Internationalization
+
+* [General translations](documentation/i18n.html#general-translations)
+* [Bundle specific translations](documentation/i18n#bundle-specific-translations)
+* [Example](documentation/i18n.html#example)
+* [Admin Menu translation](documentation/i18n.html#admin-menu-translation)
+
 ### Credentials
 
 * [For Actions](documentation/credentials.html#for-actions)
