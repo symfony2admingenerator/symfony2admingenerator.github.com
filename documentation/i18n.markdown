@@ -39,7 +39,7 @@ At the moment you can translate most of messages. Unfortunately translations wit
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
 params:
-  model: `Acme\DemoBundle\Entity\Baloon`
+  model: Acme\DemoBundle\Entity\Baloon
   namespace_prefix: Acme
   bundle_name: DemoBundle
   i18n_catalog: AcmeDemoBundle # tells Admingenerator to look for translations in AcmeDemoBundle.xx.yml
@@ -56,7 +56,7 @@ params:
       extras:
         new_label: baloon.sandbags.new.label
       addFormOptions:
-        type: `\Acme\DemoBundle\Form\Type\Baloon\EmbedSandbagType`
+        type: \Acme\DemoBundle\Form\Type\Baloon\EmbedSandbagType
         allow_add: true
         allow_delete: true
         by_reference: false
@@ -89,7 +89,7 @@ builders:
         list: ~
   edit:
     params:
-      title: `Edit baloon "{{ Baloon.name }}"` # not translated - translations with arguments are not yet supported
+      title: Edit baloon "{{ Baloon.name }}" # not translated - translations with arguments are not yet supported
       display: [ name, color, sandbags ]
       actions:
         list: ~
@@ -119,7 +119,7 @@ knp_menu:
   
 src: `Acme/DemoBundle/Resources/views/knp_menu.html.twig`
 
-{% highlight twig %}
+{% highlight html+django %}
 {{ '{%' }} extends 'knp_menu.html.twig' {{ '%}' }} 
 {{ '{%' }} block label {{ '%}' }} 
   {{ '{{' }} item.label|trans(item.getExtra('translation_params', {{ '{}' }}), item.getExtra('translation_domain', 'messages')) {{ '}}' }}
@@ -131,8 +131,10 @@ Now your KnpMenuBundle is configured and will accept "translation_domain" extra 
 src: `Acme/DemoBundle/Menu/AdminMenu.php`
 
 {% highlight php %}
+<?php
+
 public function createAdminMenu(Request $request)
-{{ '{' }}
+{
   $menu = $this->factory->createItem('root');
 
   $menu->setchildrenAttributes(array('id' => 'main_navigation', 'class'=>'menu'));
@@ -144,7 +146,7 @@ public function createAdminMenu(Request $request)
           ->setExtra('translation_domain', 'AcmeDemoBundle');
   $baloons->addChild('admin.menu.baloon.sandbags.label', array('route' => 'Acme_DemoBundle_Sandbag_list'))
           ->setExtra('translation_domain', 'AcmeDemoBundle');
-{{ '}' }}
+}
 {% endhighlight %}
   
 This will tell Admingenerator to look for translations in:  
