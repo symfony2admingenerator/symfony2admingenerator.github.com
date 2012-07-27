@@ -27,6 +27,7 @@ If your language is not listed above please [contribute](https://github.com/cedr
 ## Bundle specific translations
 
 In order to translate bundle specific messages you need to tell Admingenerator in which translation domain (i18n catalogue) it should look for translations.
+The default domain is "Admin".
 
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
@@ -127,8 +128,7 @@ knp_menu:
 
 src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
 {% highlight twig %}
-`
-{% extends 'knp_menu.html.twig' %}
+`{% extends 'knp_menu.html.twig' %}
 {% block label %}
     {{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}
 {% endblock %}`
