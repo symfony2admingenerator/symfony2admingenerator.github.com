@@ -45,7 +45,7 @@ params:
   i18n_catalog: AcmeDemoBundle # tells Admingenerator to look for translations in AcmeDemoBundle.xx.yml
   fields:
     id:
-      label:  ID     # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
+      label:  ID  # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
     name:
       label:  baloon.name.label
     color:
@@ -120,10 +120,10 @@ knp_menu:
 src: `Acme/DemoBundle/Resources/views/knp_menu.html.twig`
 
 {% highlight twig %}
-\{% extends 'knp_menu.html.twig' %\}
-\{% block label %\}
-  \{\{ item.label|trans(item.getExtra('translation_params', \{\}), item.getExtra('translation_domain', 'messages')) \}\}
-\{% endblock %\}
+{{ '{%' }} extends 'knp_menu.html.twig' {{ '%}' }} 
+{{ '{%' }} block label {{ '%}' }} 
+  {{ '{{' }} item.label|trans(item.getExtra('translation_params', {{ '{}' }}), item.getExtra('translation_domain', 'messages')) {{ '}}' }}
+{{ '{%' }} endblock {{ '%}' }} 
 {% endhighlight %}
 
 Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.  
@@ -132,7 +132,7 @@ src: `Acme/DemoBundle/Menu/AdminMenu.php`
 
 {% highlight php %}
 public function createAdminMenu(Request $request)
-\{
+{{ '{' }}
   $menu = $this->factory->createItem('root');
 
   $menu->setchildrenAttributes(array('id' => 'main_navigation', 'class'=>'menu'));
@@ -144,7 +144,7 @@ public function createAdminMenu(Request $request)
           ->setExtra('translation_domain', 'AcmeDemoBundle');
   $baloons->addChild('admin.menu.baloon.sandbags.label', array('route' => 'Acme_DemoBundle_Sandbag_list'))
           ->setExtra('translation_domain', 'AcmeDemoBundle');
-\}
+{{ '}' }}
 {% endhighlight %}
   
 This will tell Admingenerator to look for translations in:  
