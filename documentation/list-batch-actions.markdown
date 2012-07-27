@@ -7,6 +7,8 @@ title: Batch actions
 
 ## Configure generator.yml
 
+Configure myCustomAction in generator.yml:
+
 {% highlight yaml %}
 builders:
   list:
