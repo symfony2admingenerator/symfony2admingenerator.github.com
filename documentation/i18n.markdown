@@ -18,7 +18,8 @@ If your language is not listed above please [contribute](https://github.com/cedr
 ## Bundle specific translations
 
 In order to translate bundle specific messages you need to tell Admingenerator in which translation domain (i18n catalogue) it should look for translations.
-  
+
+
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
 params:
