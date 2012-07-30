@@ -24,6 +24,7 @@ generator: admingenerator.generator.doctrine
 params:
   i18n_catalog: YourTranslationDomain
 {% endhighlight %}
+
   
 >**Tip**<br />If not set, the default domain will be "Admin".  
   
