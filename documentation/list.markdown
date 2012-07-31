@@ -135,7 +135,7 @@ builders:
 
 You can add a confirm message like of the [Object actions](/documentation/list.html#object-actions)
 
-The default label is the name of the action, [translated in your language](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/tree/master/Resources/translations) by the catalog Admingenerator
+The default label is the name of the action, [translated in your language](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/tree/master/Resources/translations) by the catalog Admingenerator
 
 You can edit it with the `label` option
 
