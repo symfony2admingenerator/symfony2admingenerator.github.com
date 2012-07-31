@@ -108,6 +108,6 @@ builders:
 
 ### In pictures
 
-![Preview of list](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/raw/master/Resources/doc/list-preview.png)
+![Preview of list](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/raw/master/Resources/doc/list-preview.png)
 
-![Preview of edit](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/raw/master/Resources/doc/edit-preview.png)
+![Preview of edit](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/raw/master/Resources/doc/edit-preview.png)
