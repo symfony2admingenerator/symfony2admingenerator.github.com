@@ -13,7 +13,7 @@ Currently supported languages: English, German, Spanish, French, Italian, Polish
   
 >**Tip**<br />Admingenerator domain resides in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`  
   
-If your language is not listed above please [contribute](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle)!
+If your language is not listed above please [contribute](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle)!
   
 ## Bundle specific translations
 
