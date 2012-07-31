@@ -7,15 +7,15 @@ title: Contribute
 
 Here are the best ways you can contribute to the project.
 
-You just  _fork_ the [Admingenerator project on github](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle) and then
+You just  _fork_ the [Admingenerator project on github](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle) and then
 provide Pull Requests and /or submit issues.
 
 ## Submit an issue ##
 
 The ticketing system hosted on Github:
 
-* AdmingeneratorGeneratorBundle: [https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues](https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/issues)
-* AdmingeneratorIpsum: [https://github.com/cedriclombardot/AdmingeneratorIpsum/issues](https://github.com/cedriclombardot/AdmingeneratorIpsum/issues)
+* AdmingeneratorGeneratorBundle: [https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/issues](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/issues)
+* AdmingeneratorIpsum: [https://github.com/cedriclombardot/symfony2admingenerator/issues](https://github.com/symfony2admingenerator/AdmingeneratorIpsum/issues)
 
 ## Make a Pull Request ##
 
