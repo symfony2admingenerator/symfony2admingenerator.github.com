@@ -13,7 +13,7 @@ Configured with admingenerator and propel
 [http://symfony2admingenerator.org/symfony-ready-to-code/](http://symfony2admingenerator.org/symfony-ready-to-code/)
 
 ### With the AdmingeneratorIpsum fully configured base project ###
-The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
+The [AdmingeneratorIpsum project](https://github.com/symfony2admingenerator/AdmingeneratorIpsum) is a  "Kitchen Sink" version that is complete and will allow you:
 
 *  **to have a Fast Start:**  with  all the dependencies carefully configured with multiple templates - including Propel, Doctrine ORM, ODM.
 *  **to try out all the features:** with working examples of generator configuration, models and documentation.
@@ -21,7 +21,7 @@ The [AdmingeneratorIpsum project](https://github.com/cedriclombardot/Admingenera
 *  **to see how  site access control** is configured . It comes preconfigured with the FOS_UserBundle.
 
 {% highlight bash %}
-> git clone git://github.com/cedriclombardot/AdmingeneratorIpsum.git
+> git clone git://github.com/symfony2admingenerator/AdmingeneratorIpsum.git
 > cd AdmingeneratorIpsum
 > cp app/config/parameters.yml.sample app/config/parameters.yml
 > ./bin/vendors install
@@ -48,14 +48,14 @@ Configure your own project in the standard Symfony2 way.
 First add the AdminGenerator submodule to your project:
 
 {% highlight bash %}
-git submodule add git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git vendor/bundles/Admingenerator/GeneratorBundle
+git submodule add git://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle.git vendor/bundles/Admingenerator/GeneratorBundle
 {% endhighlight %}
 
 Or, if you use deps file:
 
 {% highlight bash %}
 [AdmingeneratorGeneratorBundle]
-    git=git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git
+    git=git://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle.git
     target=/bundles/Admingenerator/GeneratorBundle
 {% endhighlight %}
 
@@ -342,7 +342,7 @@ admingenerator_generator:
 
 ## Want to connect to FOSUserBundle ?
 
-Just setup the [AdmingeneratorUserBundle](https://github.com/cedriclombardot/AdmingeneratorUserBundle#readme)
+Just setup the [AdmingeneratorUserBundle](https://github.com/symfony2admingenerator/AdmingeneratorUserBundle#readme)
 
 Without assetic set in config.yml :
 
