@@ -96,3 +96,23 @@ builders:
   delete: ~
 {% endhighlight %}
 
+## Admin Menu translation
+
+Before you start translating menu, make sure you have told Admingenerator where to look for your admin menu.  
+  
+app/config.yml :
+
+{% highlight yaml %}
+admingenerator_generator:
+  knp_menu_class: Acme\DemoBundle\Menu\AdminMenu
+{% endhighlight %}
+
+AdminMenu is based on KnpMenuBundle. To translate KnpMenuBundle you need to overwrite the default menu template.
+
+src: app/config.yml
+
+{% highlight yaml %}
+knp_menu:
+  twig:
+    template: AcmeDemoBundle::knp_menu.html.twig  # your custom knp_menu template
+{% endhighlight %}
