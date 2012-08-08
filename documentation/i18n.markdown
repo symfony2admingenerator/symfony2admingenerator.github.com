@@ -102,7 +102,7 @@ builders:
 
 Before you start translating menu, make sure you have told Admingenerator where to look for your admin menu.  
   
-src: `app/config.yml`
+app/config.yml :
 
 {% highlight yaml %}
 admingenerator_generator:
