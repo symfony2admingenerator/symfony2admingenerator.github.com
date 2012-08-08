@@ -180,3 +180,25 @@ And for the column title overwrite the Twig Block named form_**title**
 {% endhighlight %}
 
 ##Actions
+
+Like for lis you can configure actions 
+
+{% highlight yaml %}
+ edit:
+   actions:
+     myActionName: 
+       route: MyRoute
+{% endhighlight %}
+
+But when you are in the edit view you want probably to keep some context to build your route 
+
+{% highlight yaml %}
+   actions:
+     myActionName: 
+       route: MyRoute
+       params:
+         pk: "{{ MyModel.id }}"
+         locale: fr
+{% endhighlight %}
+
+
