@@ -18,3 +18,9 @@ If your language is not listed above please [contribute](https://github.com/symf
 ## Bundle specific translations
 
 In order to translate bundle specific messages you need to tell Admingenerator in which translation domain (i18n catalogue) it should look for translations.
+
+{% highlight yaml %}
+generator: admingenerator.generator.xxxx
+params:
+  i18n_catalog: YourTranslationDomain
+{% endhighlight %}
