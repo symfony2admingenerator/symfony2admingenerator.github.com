@@ -29,9 +29,70 @@ params:
   
 This will tell Admingenerator to look for translations in: 
   
-* `../Resources/translations/YourTranslationDomain.xx.yml`
-* `../Resources/translations/YourTranslationDomain.xx.xliff`
+* ../Resources/translations/YourTranslationDomain.xx.yml
+* ../Resources/translations/YourTranslationDomain.xx.xliff
 
 ## Example
 
 At the moment you can translate most of messages. Unfortunately translations with arguments are not yet supported (although I do plan to fix that).
+
+{% highlight yaml %}
+generator: admingenerator.generator.doctrine
+params:
+  model: Acme\DemoBundle\Entity\Baloon
+  namespace_prefix: Acme
+  bundle_name: DemoBundle
+  i18n_catalog: AcmeDemoBundle # tells Admingenerator to look for translations in AcmeDemoBundle.xx.yml
+  fields:
+    id:
+      label:  ID  # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
+    name:
+      label:  baloon.name.label
+    color:
+      label:  baloon.color.label
+      help:   baloon.color.help
+    sandbags:
+      formType: collection
+      extras:
+        new_label: baloon.sandbags.new.label
+      addFormOptions:
+        type: \Acme\DemoBundle\Form\Type\Baloon\EmbedSandbagType
+        allow_add: true
+        allow_delete: true
+        by_reference: false
+builders:
+  list:
+    params:
+      title: baloon.title.list
+      display: [ id, name, color ]
+      actions:
+        new: ~
+      batch_actions:
+        delete: 
+          label:    baloon.delete.label
+          confirm:  baloon.delete.confirm
+        myCustomAction:
+          label:    baloon.myCustomAction.label
+          confirm:  baloon.myCustomAction.confirm
+      object_actions:
+        edit: ~
+        delete: ~
+      max_per_page: 12
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: baloon.title.new
+      display: [ name, color, sandbags ]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Edit baloon "{{ Baloon.name }}" # not translated - translations with arguments are not yet supported
+      display: [ name, color, sandbags ]
+      actions:
+        list: ~
+  delete: ~
+{% endhighlight %}
+
