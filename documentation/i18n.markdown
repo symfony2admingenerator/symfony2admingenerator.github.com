@@ -125,3 +125,26 @@ src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
   {{ "{{" }} item.label|trans(item.getExtra("translation_params", {}, item.getExtra("translation_domain", "messages")) {{ "}}" }}
 {{ "{%" }} endblock %}
 {% endhighlight %}
+
+Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.  
+  
+src: `Acme/DemoBundle/Menu/AdminMenu.php`
+
+{% highlight php %}
+<?php
+
+public function createAdminMenu(Request $request)
+{
+  $menu = $this->factory->createItem('root');
+
+  $menu->setchildrenAttributes(array('id' => 'main_navigation', 'class'=>'menu'));
+
+  $baloons = $menu->addChild('admin.menu.baloon.label', array('uri' => '#'))
+                  ->setExtra('translation_domain', 'AcmeDemoBundle');
+  $baloons->setLinkAttributes(array('class'=>'sub main'));
+  $baloons->addChild('admin.menu.baloon.baloons.label', array('route' => 'Acme_DemoBundle_Baloon_list'))
+          ->setExtra('translation_domain', 'AcmeDemoBundle');
+  $baloons->addChild('admin.menu.baloon.sandbags.label', array('route' => 'Acme_DemoBundle_Sandbag_list'))
+          ->setExtra('translation_domain', 'AcmeDemoBundle');
+}
+{% endhighlight %}
