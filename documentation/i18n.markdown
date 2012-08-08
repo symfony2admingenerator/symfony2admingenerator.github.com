@@ -117,11 +117,11 @@ knp_menu:
     template: AcmeDemoBundle::knp_menu.html.twig  # your custom knp_menu template
 {% endhighlight %}
 
-src: `Acme/DemoBundle/Resources/views/knp_menu.html.twig`
+src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
 
 {% highlight html+django %}
-{{ '{%' }} extends 'knp_menu.html.twig' {{ '%}' }} 
-{{ '{%' }} block label {{ '%}' }} 
-  {{ '{{' }} item.label|trans(item.getExtra('translation_params', {{ '{}' }}), item.getExtra('translation_domain', 'messages')) {{ '}}' }}
-{{ '{%' }} endblock {{ '%}' }} 
+{{ "{%" }} extends 'knp_menu.html.twig' %}
+{{ "{%" }} block label %} 
+  {{ "{{" }} item.label|trans(item.getExtra('translation_params', {{ "{}" }}), item.getExtra('translation_domain', 'messages')) }}
+{{ "{%" }} endblock %} 
 {% endhighlight %}
