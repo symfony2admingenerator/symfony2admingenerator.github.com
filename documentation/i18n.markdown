@@ -24,3 +24,14 @@ generator: admingenerator.generator.xxxx
 params:
   i18n_catalog: YourTranslationDomain
 {% endhighlight %}
+
+>**Tip**<br />If not set, the default domain will be "Admin".  
+  
+This will tell Admingenerator to look for translations in: 
+  
+* `../Resources/translations/YourTranslationDomain.xx.yml`
+* `../Resources/translations/YourTranslationDomain.xx.xliff`
+
+## Example
+
+At the moment you can translate most of messages. Unfortunately translations with arguments are not yet supported (although I do plan to fix that).
