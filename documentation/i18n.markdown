@@ -121,7 +121,5 @@ src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
 
 {% highlight html+django %}
 {{ "{%" }} extends "knp_menu.html.twig" %}
-{{ "{%" }} block label % 
-  {{ "{{" }} item.label|trans(item.getExtra("translation_params", {{ "{}" }} ), item.getExtra("translation_domain", "messages")) {{ "}}" }}
-{{ "{%" }} endblock %}
+
 {% endhighlight %}
