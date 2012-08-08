@@ -148,3 +148,9 @@ public function createAdminMenu(Request $request)
           ->setExtra('translation_domain', 'AcmeDemoBundle');
 }
 {% endhighlight %}
+
+
+This will tell Admingenerator to look for translations in:  
+  
+* `../Resources/translations/AcmeDemoBundle.xx.yml`
+* `../Resources/translations/AcmeDemoBundle.xx.xliff`
