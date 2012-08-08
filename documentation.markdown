@@ -58,6 +58,7 @@ The main option ar same as `List`configuration, this section will present change
 * [Overwrite the rendering of a field](documentation/form.html#overwrite-the-rendering-of-a-field)
 * [Choose your types](documentation/form-advanced.html#choose-your-types)
 * [Configure the success/error messages](documentation/success-error-messages.html)
+* [Actions](documentation/form.html#actions)
 
 ### Internationalization
 
