@@ -18,8 +18,14 @@
     font-weight: bold;
     cursor: pointer;
 }
+.code.odd {
+    background: none repeat scroll 0 0 #EFEFEF;
+}
+.doc.odd {
+    background: none repeat scroll 0 0 #feeefe;
+}
 .hover {
-    background: none repeat scroll 0 0 #ffffcc;
+    background: none repeat scroll 0 0 #ffffcc !important;
 }
 .cheat-sheet li {
     display: block;

@@ -13,6 +13,9 @@ layout: clean_base
 $(document).ready(function() {
 	var lowOpacity = 0.8;
 
+	$('.doc:odd').addClass('odd');
+	$('.code:odd').addClass('odd');
+
 	$('.doc').each(function() {
 		$(this).prev().css('height', $(this).height()+10); //10 is padding
 		$(this).fadeTo(0, lowOpacity);
