@@ -11,13 +11,15 @@ layout: clean_base
 
 <script type="text/javascript">
 $(document).ready(function() {
+	var lowOpacity = 0.8;
+
 	$('.doc').each(function() {
 		$(this).prev().css('height', $(this).height()+10); //10 is padding
-		$(this).fadeTo(500, 0.1);
+		$(this).fadeTo(0, lowOpacity);
 	});
 
 	$('.code').hover(function handlerIn(e) {
-		$(this).next().fadeTo(100, 1);
+		$(this).next().fadeTo(0, 1);
 		$(this).addClass('hover');
 		$(this).next().addClass('hover');
 	},
@@ -25,12 +27,12 @@ $(document).ready(function() {
 		$(this).removeClass('hover');
 		$(this).next().removeClass('hover');
 
-		$(this).next().fadeTo(500, 0.1);
+		$(this).next().fadeTo(0, lowOpacity);
 
 	});
 
 	$('.doc').hover(function handlerIn(e) {
-		$(this).fadeTo(100, 1);
+		$(this).fadeTo(0, 1);
 		$(this).addClass('hover');
 		$(this).prev().addClass('hover');
 	},
@@ -38,7 +40,7 @@ $(document).ready(function() {
 		$(this).removeClass('hover');
 		$(this).prev().removeClass('hover');
 
-		$(this).fadeTo(500, 0.1);
+		$(this).fadeTo(0, lowOpacity);
 
 	});
 
