@@ -29,5 +29,18 @@ $(document).ready(function() {
 
 	});
 
+	$('.doc').hover(function handlerIn(e) {
+		$(this).fadeTo(100, 1);
+		$(this).addClass('hover');
+		$(this).prev().addClass('hover');
+	},
+	function handlerOut(e) {
+		$(this).removeClass('hover');
+		$(this).prev().removeClass('hover');
+
+		$(this).fadeTo(500, 0.1);
+
+	});
+
 });
 </script>
