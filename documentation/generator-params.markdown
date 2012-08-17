@@ -7,7 +7,7 @@ title: Params section of generator.yml
 
 ## Bundle in Acme/Bundle/TestBundle ?
 
-If you have "non-standard" structure of bundle and your bundles namespaces are Acme/Bundle/TestBundle and not Acme/TestBundle, 
+If you have "non-standard" structure of bundle and your bundles namespaces are Acme/Bundle/TestBundle and not Acme/TestBundle,
 you have to update the generator.yml like that :
 
 {% highlight yaml %}
@@ -50,7 +50,6 @@ Sometimes, you'll want to add your own js in the theme. Two way to do that :
 {% highlight yaml %}
 admingenerator_generator:
     javascripts:
-      - bundles/mybundle/js/backend.js
       - { path: bundles/mybundle/js/backend.js }
       - { route: "fos_js_routing_js", routeparams: { callback: "fos.Router.setData"} }
 {% endhighlight %}
