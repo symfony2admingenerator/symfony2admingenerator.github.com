@@ -18,15 +18,16 @@ The first production release will be 1.0.
 * <strike>Implement non HTML5 validators [#17](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/issues/17)</strike> Moved to 1.1
 * <strike>Implement the `owner` credential</strike>
 * <strike>Add batch actions</strike>
-* Implement nested set for <strike>propel and</strike> doctrine
-* Fix mongodb types [#31](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/issues/31)
+* Implement nested set for <strike>propel and</strike> doctrine<strike>
+* <strike>Fix mongodb types [#31](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/issues/31)</strike>
 
-### ActiveAdminTheme :
+### TwitterTheme :
 
-* Continue the integration of forms
+* Implement twitter theme
 
 ### Documentation :
 
+* Cheat sheets
 * On how to skin the admin
 * On validators
 * On TwigGenerator
