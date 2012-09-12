@@ -5,36 +5,127 @@ title: Internationalization
 
 # Internationalization
 
-## General translations
+This chapter assumes you are familiar with the way Symfony2 deals with internationalization. If not, please read [translation chapter](http://symfony.com/doc/current/book/translation.html) first.
 
-Common messages like "Add", "Save" or "Are you sure ?" are translated useing Admingenerator translation domain.  
+## General messages
+
+Common translations like "Add", "Save" or "Are you sure?" that are shared among all generated admin screens are put into Admingenerator trasnlation domain.
   
-Currently supported languages: English, German, Spanish, French, Italian, Polish, Portuguese, Russian, Slovenian and Ukrainian.  
-  
->**Tip**<br />Admingenerator domain resides in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`  
-  
+Currently supported languages are English, French, German, Italian, Polish, Portuguese, Russian, Slovenian, Spanish and Ukrainian.
 If your language is not listed above please [contribute](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle)!
 
-## Bundle specific translations
+>**Notice**<br />Translation files can be found in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`.
 
-In order to translate bundle specific messages you need to tell Admingenerator in which translation domain (i18n catalogue) it should look for translations.
+## Bundle specific messages
+
+As you develop you will most likely need to add some translations that are specific to your bundle. Not a problem! All you need to do is tell Admingenerator which translation domain (i18n catalogue) it should use.
 
 {% highlight yaml %}
 generator: admingenerator.generator.xxxx
 params:
   i18n_catalog: YourTranslationDomain
 {% endhighlight %}
-
->**Tip**<br />If not set, the default domain will be "Admin".  
   
 This will tell Admingenerator to look for translations in: 
   
-* ../Resources/translations/YourTranslationDomain.xx.yml
-* ../Resources/translations/YourTranslationDomain.xx.xliff
+* `../Resources/translations/YourTranslationDomain.xx.yml`
+* `../Resources/translations/YourTranslationDomain.xx.xliff`
 
-## Example
+>**Notice**<br />If not set, the default domain will be "Admin".  
 
-At the moment you can translate most of messages. Unfortunately translations with arguments are not yet supported (although I do plan to fix that).
+## Translation parameters
+
+Let's assume we're building online book store app. Our **edit book** screen title will probably look like `You're editing {{ Book.title }} written by {{ Book.author.name }}!`.
+
+{% highlight yaml %}
+builders:
+  edit:
+    params:
+      title: You're editing {{ Book.title }} written by {{ Book.author.name }}!
+      display: [ title, author, publishedAt ]
+      actions:
+        list: ~
+  delete: ~
+{% endhighlight %}
+
+In order to translate that we need add i18n_catalog to our `generator.yml` file:
+
+{% highlight yaml %}
+generator: admingenerator.generator.doctrine
+params:
+  model: Acme\BookstoreBundle\Entity\Book
+  namespace_prefix: Acme
+  bundle_name: BookstoreBundle
+  i18n_catalog: AcmeBookstoreBundle
+{% endhighlight %}
+
+Finally, create translation file for your messages:
+
+* `../Resources/translations/AcmeBookstoreBundle.pl.yml`
+
+## Inline parameters
+
+To adress inline parameters like `{{ Book.title }}` in our example `You're editing {{ Book.title }} written by {{ Book.author.name }}!` you simply replace the twig tag opening and closing brackets with `%` (percent) signs.
+
+{% highlight yaml %}
+# AcmeBookstoreBundle.pl.yml
+"You're editing %Book.title% written by %Book.author.name%!":    "Edytujesz %Book.title% autorstwa %Book.author.name%!"
+{% endhighlight %}
+
+>**Notice**<br />This type of translation is not encouraged, it was introduced to keep backwards compability.
+
+## Parameter bag with full syntax
+
+To pass parameters along with message you need to add parameter bag.
+
+Admingenerator requiers a very strict syntax in order to succesfully read parameters.
+
+* Parameter bag is always appended to original message
+* Parameter bag begins with `|{ ` and ends with ` }|` (spaces after opening and before closing brackets are important!)
+* Parameters in parameter bag are seperated by `, ` (comma and space)
+* Parameter keys and values can consist only of a-z, A-Z, 0-9 and . (dot) characters
+
+The full syntax approach let's you name your parameters:
+
+String: `You're editing %book% written by %author%!|{ %book%: Book.title, %author%: Book.author.name }|`.
+
+{% highlight yaml %}
+# AcmeBookstoreBundle.pl.yml
+"You're editing %book% written by %author%!":    "Edytujesz %book% autorstwa %author%!"
+{% endhighlight %}
+
+Or, if you prefer keyword messages translation:
+
+String: `book.edit.title|{ %book%: Book.title, %author%: Book.author.name }|`
+
+{% highlight yaml %}
+# AcmeBookstoreBundle.pl.yml
+book.edit.title:    "Edytujesz %book% autorstwa %author%!"
+{% endhighlight %}
+
+## Parameter bag with abbreviated syntax
+
+Some might feel like the key/value approach makes the parameter bag too long. Don't worry! You can always use the **abbreviated syntax** where parameter value is also it's key:
+
+String: `You're editing %Book.title% written by %Book.author.name%!|{ Book.title, Book.author.name }|`
+
+{% highlight yaml %}
+# AcmeBookstoreBundle.pl.yml
+"You're editing %Book.title% written by %Book.author.name%!":    "Edytujesz %Book.title% autorstwa %Book.author.name%!"
+{% endhighlight %}
+
+Or, if you prefer keyword messages translation:
+
+String: `book.edit.title|{ Book.title, Book.author.name }|`
+
+{% highlight yaml %}
+# AcmeBookstoreBundle.pl.yml
+book.edit.title:    "Edytujesz %Book.title% autorstwa %Book.author.name%!"
+{% endhighlight %}
+
+>**Notice**<br />My personal favourite is keywords messages with abbreviated parameter bag syntax. This approach keeps `generator.yml` relatively clean and abstracts the generator from actual content (MVC FTW!).
+
+## Generator file example
 
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
@@ -45,7 +136,7 @@ params:
   i18n_catalog: AcmeDemoBundle # tells Admingenerator to look for translations in AcmeDemoBundle.xx.yml
   fields:
     id:
-      label:  ID  # not translated - no key "ID" in AcmeDemoBundle.xx.yml, becouse basically.. it does not need translating
+      label:  ID
     name:
       label:  baloon.name.label
     color:
@@ -89,7 +180,7 @@ builders:
         list: ~
   edit:
     params:
-      title: Edit baloon "{{ Baloon.name }}" # not translated - translations with arguments are not yet supported
+      title: baloon.title.edit|{ Baloon.name }| 
       display: [ name, color, sandbags ]
       actions:
         list: ~
