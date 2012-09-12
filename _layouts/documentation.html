@@ -8,9 +8,9 @@ layout: base
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.toc').tableOfContents();
+        $('.toc').tableOfContents($('.markdown'));
         $('.toc_zone').addClass('active');
         window.location.hash = window.location.hash;
     });
-    
+
 </script>
