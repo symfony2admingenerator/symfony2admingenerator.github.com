@@ -62,9 +62,14 @@ The main option ar same as `List`configuration, this section will present change
 
 ### Internationalization
 
-* [General translations](documentation/i18n.html#general-translations)
-* [Bundle specific translations](documentation/i18n#bundle-specific-translations)
-* [Example](documentation/i18n.html#example)
+* [Overview](documentation/i18n.html#internationalization)
+* [General messages](documentation/i18n.html#general-messages)
+* [Bundle specific messages](documentation/i18n#bundle-specific-messages)
+* [Translation parameters](documentation/i18n.html#translation-parameters)
+* [Inline parameters](documentation/i18n.html#inline-parameters)
+* [Parameter bag with full syntax](documentation/i18n.html#parameter-bag-with-full-syntax)
+* [Parameter bag with abbreviated syntax](documentation/i18n.html#parameter-bag-with-abbreviated-syntax)
+* [Generator file example](documentation/i18n.html#generator-file-example)
 * [Admin Menu translation](documentation/i18n.html#admin-menu-translation)
 
 ### Credentials
