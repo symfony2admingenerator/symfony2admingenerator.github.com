@@ -5,7 +5,8 @@ title: Internationalization
 
 # Internationalization
 
-This chapter assumes you are familiar with the way Symfony2 deals with internationalization. If not, please read [translation chapter](http://symfony.com/doc/current/book/translation.html) first.
+This chapter assumes you are familiar with the way Symfony2 deals with internationalization. 
+If not, please read [translation chapter](http://symfony.com/doc/current/book/translation.html) first.
 
 ## General messages
 
@@ -126,6 +127,10 @@ book.edit.title:    "Edytujesz %Book.title% autorstwa %Book.author.name%!"
 >**Notice**<br />My personal favourite is keywords messages with abbreviated parameter bag syntax. This approach keeps `generator.yml` relatively clean and abstracts the generator from actual content (MVC FTW!).
 
 ## Generator file example
+
+For a quick reference here is an example:
+
+* `Acme/DemoBundle/Resources/config/Baloon-generator.yml`
 
 {% highlight yaml %}
 generator: admingenerator.generator.doctrine
