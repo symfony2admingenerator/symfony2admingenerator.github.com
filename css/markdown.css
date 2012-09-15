@@ -96,6 +96,7 @@
   overflow-y:auto;
   font-size:13px;
   margin-top: 10px;
+  clear: left;
 }
 
 .markdown blockquote {
