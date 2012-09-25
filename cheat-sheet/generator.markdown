@@ -30,7 +30,7 @@ title: Admingenerator cheat sheat for *-generator.yml
 			</li>
 			<li>
 				<span class="code">bundle_name: <span class="accepted_values">string</span></span>
-				<span class="doc">The bundle namse without the namespace_prefix</span>
+				<span class="doc">The bundle name without the namespace_prefix</span>
 			</li>
 			<li>
 				<span class="code">fields: <span class="accepted_values">array</span></span>

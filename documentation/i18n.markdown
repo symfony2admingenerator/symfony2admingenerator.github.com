@@ -86,7 +86,7 @@ Admingenerator requiers a very strict syntax in order to succesfully read parame
 * Parameters in parameter bag are seperated by `, ` (comma and space)
 * Parameter keys and values can consist only of a-z, A-Z, 0-9 and . (dot) characters
 
-The full syntax approach let's you name your parameters:
+The full syntax approach let you name your parameters:
 
 String: `You're editing %book% written by %author%!|{ %book%: Book.title, %author%: Book.author.name }|`.
 
