@@ -200,5 +200,3 @@ But when you are in the edit view you want probably to keep some context to buil
          pk: "{{ MyModel.id }}"
          locale: fr
 {% endhighlight %}
-
-

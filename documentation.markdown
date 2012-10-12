@@ -60,6 +60,12 @@ The main option ar same as `List`configuration, this section will present change
 * [Configure the success/error messages](documentation/success-error-messages.html)
 * [Actions](documentation/form.html#actions)
 
+### Form Types
+
+* [Entity Picker](documentation/entitypicker.html#usage)
+* [DatePicker](documentation/datepicker.html#usage)
+* [DatePickerRange](documentation/datepicker.html#datepickerrange)
+
 ### Internationalization
 
 * [Overview](documentation/i18n.html#internationalization)
