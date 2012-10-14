@@ -77,6 +77,7 @@ The main option ar same as `List`configuration, this section will present change
 * [Parameter bag with abbreviated syntax](documentation/i18n.html#parameter-bag-with-abbreviated-syntax)
 * [Generator file example](documentation/i18n.html#generator-file-example)
 * [Admin Menu translation](documentation/i18n.html#admin-menu-translation)
+* [Tabs and fieldsets](documentation/i18n.html#tabs-and-fieldsets-translation)
 
 ### Credentials
 

@@ -269,3 +269,21 @@ This will tell Admingenerator to look for translations in:
   
 * `../Resources/translations/AcmeDemoBundle.xx.yml`
 * `../Resources/translations/AcmeDemoBundle.xx.xliff`
+
+## Tabs and fieldsets translation
+
+Tabs and fieldsets are translated useing `Admin` or (if set) `i18n_catalog` translation domain.
+
+{% highlight yaml %}
+  tabs: 
+    "tab.product":
+      "set.general":          [ name ]
+      "set.description":      [ caption, description ]
+      "set.properties":       [ properties ]
+      "set.files":            [ files ]
+    "tab.catalog":
+      "set.category":         [ category ]
+      "set.marketSegments":   [ marketSegments ]
+{% endhighlight %}
+
+>**Note**<br />To use punctation in tab/fieldset name (as shown above) you need to pass it as string (in quotes).
