@@ -149,6 +149,10 @@ This section of configuration is valid for all param.fields sections :
 						<span class="doc">The list of fields to show in the table (by default <span class="default_value">~</span> admingenrator try to find all fields)</span>
 					</li>
 					<li>
+						<span class="code">sort: <span class="default_value">~</span> <span class="accepted_values">array</span></span>
+						<span class="doc">The column to sort and optionally the sorting order (<span class="default_value">ASC</span> by default)</span>
+					</li>
+					<li>
 						<span class="code">fields: <span class="accepted_values">array</span></span>
 						<span class="doc"><a href="#fields-configuration">See fields configuration section</a></span>
 					</li>
