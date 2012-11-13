@@ -30,6 +30,8 @@ Of course if you want to contribute, you're welcome
 * [Actions](documentation/list.html#actions)
 * [Batch Actions](documentation/list-batch-actions.html)
 * [Edit query](documentation/list.html#edit-query)
+* [Predefined filters](documentation/list.html#predefined-filters)
+
 
 ### Nestedset List (only for propel)
 
