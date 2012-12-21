@@ -5,7 +5,7 @@ title: Quick start
 
 # In 3 steps
 
-## Step 1: Setup you symfony environnement
+## Step 1: Setup your symfony environnement
 
 Of course, you've to [setup the bundle](/installation.html) by forking the [ipsum project](https://github.com/symfony2admingenerator/AdmingeneratorIpsum) or by following the [installation guide](/installation.html)
 
