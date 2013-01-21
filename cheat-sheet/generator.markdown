@@ -50,6 +50,10 @@ title: Admingenerator cheat sheat for *-generator.yml
 				<span class="code">filters: <span class="accepted_values">array</span></span>
 				<span class="doc"><a href="#filters-configuration">See filters configuration section</a></span>
 			</li>
+		    <li>
+				<span class="code">show: <span class="accepted_values">array</span></span>
+				<span class="doc"><a href="#show-configuration">See show configuration section</a></span>
+			</li>
 			<li>
 				<span class="code">new: <span class="accepted_values">array</span></span>
 				<span class="doc"><a href="#new-configuration">See new configuration section</a></span>
