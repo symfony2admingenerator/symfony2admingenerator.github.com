@@ -3,36 +3,55 @@ layout: documentation
 title: Internationalization
 ---
 
-# Internationalization
+## Internationalization
 
-This chapter assumes you are familiar with the way Symfony2 deals with internationalization. 
-If not, please read [translation chapter](http://symfony.com/doc/current/book/translation.html) first.
+This chapter assumes you are familiar with the way Symfony2 deals with internationalization. If not, please read [translation chapter](http://symfony.com/doc/current/book/translation.html) first. 
+
+Currently supported languages:
+
+* English (en)
+* French (fr)
+* German (de)
+* Italian (it)
+* Polish (pl)
+* Portuguese (pt)
+* Russian (ru)
+* Slovenian (sl)
+* Spanish (es)
+* Ukrainian (ua)
+
+If your language is not listed above please [contribute](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle)!
 
 ## General messages
 
-Common translations like "Add", "Save" or "Are you sure?" that are shared among all generated admin screens are put into Admingenerator trasnlation domain.
-  
-Currently supported languages are English, French, German, Italian, Polish, Portuguese, Russian, Slovenian, Spanish and Ukrainian.
-If your language is not listed above please [contribute](https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle)!
+General messages are translated usieng `Admingenerator` translation domain. You can find translation files in `Admingenerator/GeneratorBundle/Resources/translations/`.
 
->**Notice**<br />Translation files can be found in `Admingenerator/GeneratorBundle/Resources/translations/Admingenerator.xx.yml`.
+General messages include:
+
+* list, object and batch actions
+* form type messages
+* paginator
+* filters
+* list result messages
+
+>**Overwriting default messages**<br />To overwrite default messages or add new messages (e.g. for custom actions) create `/Resources/translations/Admingenerator.xx.yml` in your bundle's directory and make sure your bundle is loaded **AFTER** `AdmingeneratorGeneratorBundle` in `AppKernel.php`.
 
 ## Bundle specific messages
 
-As you develop you will most likely need to add some translations that are specific to your bundle. Not a problem! All you need to do is tell Admingenerator which translation domain (i18n catalogue) it should use.
+Some messages are bundle specific, and as such they have been separated from general messages.
+
+Bundle specific messages include:
+
+* entity field messages (label, help)
+* list, new and edit template title
 
 {% highlight yaml %}
 generator: admingenerator.generator.xxxx
 params:
   i18n_catalog: YourTranslationDomain
 {% endhighlight %}
-  
-This will tell Admingenerator to look for translations in: 
-  
-* `../Resources/translations/YourTranslationDomain.xx.yml`
-* `../Resources/translations/YourTranslationDomain.xx.xliff`
 
->**Notice**<br />If not set, the default domain will be "Admin".  
+>**Notice**<br />If not set, the default domain for form field messages will be `Admin`.  
 
 ## Translation parameters
 
@@ -222,7 +241,7 @@ src: Acme/DemoBundle/Resources/views/knp_menu.html.twig
 {{ "{%" }} endblock %}
 {% endhighlight %}
 
-Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalogue you want to use for translation purposes.  
+Now your KnpMenuBundle is configured and will accept "translation_domain" extra parameter. Translation domain is simply i18n catalog you want to use for translation purposes.  
   
 src: `Acme/DemoBundle/Menu/AdminMenu.php`
 
@@ -250,3 +269,21 @@ This will tell Admingenerator to look for translations in:
   
 * `../Resources/translations/AcmeDemoBundle.xx.yml`
 * `../Resources/translations/AcmeDemoBundle.xx.xliff`
+
+## Tabs and fieldsets translation
+
+Tabs and fieldsets are translated useing `Admin` or (if set) `i18n_catalog` translation domain.
+
+{% highlight yaml %}
+  tabs: 
+    "tab.product":
+      "set.general":          [ name ]
+      "set.description":      [ caption, description ]
+      "set.properties":       [ properties ]
+      "set.files":            [ files ]
+    "tab.catalog":
+      "set.category":         [ category ]
+      "set.marketSegments":   [ marketSegments ]
+{% endhighlight %}
+
+>**Note**<br />To use punctation in tab/fieldset name (as shown above) you need to pass it as string (in quotes).
