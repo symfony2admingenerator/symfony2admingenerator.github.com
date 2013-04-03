@@ -94,7 +94,7 @@ builders:
           confirm: Are you sure to delete {{ Movie.title }} ?
 {% endhighlight %}
 
-Will go to edit if you click ok on the confirm box message, and like you can see in this sample you can use twig power in your confirm message
+Will process the delete action if you click ok on the confirm box message, and like you can see in this sample you can use twig power in your confirm message
 
 The default route for an object action is  **namespace_prefix** _ **bundle_name** _ **action_name**
 
