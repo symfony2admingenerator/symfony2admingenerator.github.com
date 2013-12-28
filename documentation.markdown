@@ -1,11 +1,11 @@
 ---
-layout: base
+layout: documentation
 title: Documentation
 ---
 
 # Documentation
 
-* [Quick start](documentation/quick-start.html)
+* [Quick start](documentation/quick-start)
 
 ## By Features
 
