@@ -47,7 +47,7 @@ builders:
 
 ## Overwrite the rendering of a field
 
-Edit the file : YourBundle/Resources/views/List/index.html
+Edit the file : YourBundle/Resources/views/List/row.html
 
 And for the column title overwrite the Twig Block named list_td_column_**title**
 
