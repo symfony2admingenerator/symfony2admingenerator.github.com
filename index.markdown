@@ -1,9 +1,9 @@
 ---
 layout: base
-title: "Documentation for AdmigeneratorGeneratorBundle"
+title: "Documentation for AdmingeneratorGeneratorBundle"
 ---
 
-# Welcome to the AdmigeneratorGeneratorBundle documentation! #
+# Welcome to the AdmingeneratorGeneratorBundle documentation! #
 
 ### What? ###
 
