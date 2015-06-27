@@ -28,7 +28,7 @@ Edge cases are pushed far back since **extensibility is at the heart of the arch
 The primary goal is to simply and rapidly build an entire admin site. But additionally this can:
 
 *	be used in a similar way to the Symfony Interactive generators to **kick start your own development**, 
-*	refractor from this start and use the central yaml file to ensure that site components are consistent as you build out the development, and 
+*	refactor from this start and use the central yaml file to ensure that site components are consistent as you build out the development, and 
 *	be used as a simple way to "wire-frame" your application to show proof of concept functionality to other stake holders, and then used to firm up requirements.  
 
 #### Developers new to Symfony who wish to have an easy start  ####
