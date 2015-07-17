@@ -278,6 +278,34 @@ protected function getQuery()
 
 If you want to have by default all the movies published only. 
 
+
+## Pre-defined filters (filter on dbType Entity works only with doctrine)
+
+You can link to a pre-filtered list.
+
+Consider a list of Users and a list of Comments.
+For each user, let's create a link - in the user List - to the user's comments - in the Comment List.
+
+First, we add a new display field in YourBundle/Resources/config/User-generator.yml :
+
+{% highlight yaml %}
+builders:
+  list:
+    params:
+      display: [..., object_navigation]
+{% endhighlight %}
+
+Then we customize this field in YourBundle/Resources/views/UserList/index.html.twig :
+
+{% highlight html+django %}
+{{ "{%" }} extends_admingenerated "NamespaceYourBundle:UserList:index.html.twig" %}
+{{ "{%" }} block list_td_column_object_navigation %}
+    <a href="{{ path('Namespace_YourBundle_Comment_filters', { 'user' : User.id  } ) }}">
+        <img src="{{ asset('bundles/namespaceyourbundle/images/icons/comment.png') }}" title="All comments for this user">
+    </a>
+{{ "{%" }} endblock %}
+{% endhighlight %}
+
 ## Configuration
 
 ### Date format
